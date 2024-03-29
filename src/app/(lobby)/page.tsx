@@ -1,6 +1,6 @@
 import { siteConfig } from '@/config/site'
 
-const headline = siteConfig.slogan.split(' ')
+const headlineData = siteConfig.slogan.split(' ')
 
 export default function IndexPage () {
   return (
@@ -11,13 +11,13 @@ export default function IndexPage () {
             <h1
               className='f-display-1 font-header text-right'
             >
-              {headline.map((word, key) => {
-                return key < (headline.length - 1)
+              {headlineData.map((word, key) => {
+                return key < (headlineData.length - 1)
                   ? `${word} `
                   : (
                     <span className='w-full block relative z-0' key={key}>
                       {`${word}.`}
-                      <span className='w-xs sm:w-[480px] xl:w-[640px] h-[61%] xl:h-[58%] absolute inset-y-0 top-4 sm:top-5 xl:top-6 -right-2 my-auto bg-accent -z-10' />
+                      <span className='w-[310px] sm:w-[480px] xl:w-[640px] h-[61%] xl:h-[58%] absolute inset-y-0 top-4 sm:top-5 xl:top-6 -right-2 my-auto bg-accent -z-10' />
                     </span>
                     )
               })}
