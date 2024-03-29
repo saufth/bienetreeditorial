@@ -15,7 +15,7 @@ const servicesLink = siteConfig.mainNav.find(({ title }) => title === 'Nuestros 
 export default function Menu ({ action }: { action?: () => void }) {
   return (
     <div className='cols-container gap-y-spacing-6'>
-      <div className='w-6-cols sm:w-8-cols lg:w-5-cols xl:w-6-cols flex flex-col gap-y-spacing-4'>
+      <div className='w-6-cols sm:w-8-cols lg:w-5-cols xl:w-6-cols flex flex-col gap-y-spacing-4 order-2 md:order-1'>
         <Link
           href={whatsappUrl(contactPhone)}
           onClick={action}
@@ -54,7 +54,7 @@ export default function Menu ({ action }: { action?: () => void }) {
         <SocialNav items={socialNav} action={action} />
       </div>
       <nav
-        className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter'
+        className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter order-1 md:order-2'
         aria-label={`${siteConfig.name} directorio`}
       >
         <div>
