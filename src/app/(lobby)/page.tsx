@@ -17,7 +17,7 @@ export default function IndexPage () {
                   : (
                     <span className='w-full block relative z-0' key={key}>
                       {`${word}.`}
-                      <span className='w-[310px] sm:w-[480px] xl:w-[640px] h-[61%] xl:h-[58%] absolute inset-y-0 top-4 sm:top-5 xl:top-6 -right-2 my-auto bg-accent -z-10' />
+                      <span className='w-[310px] sm:w-[480px] xl:w-[640px] h-[62%] xl:h-[58%] absolute inset-y-0 top-3 sm:top-5 xl:top-6 -right-2 my-auto bg-accent -z-10' />
                     </span>
                     )
               })}
