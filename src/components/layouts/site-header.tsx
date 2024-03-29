@@ -116,8 +116,7 @@ export default function SiteHeader () {
         initial={{ height: '0px' }}
         animate={{ height: isMenuOpen ? '100dvh' : '0px' }}
         transition={{
-          duration: 1,
-          ease: 'easeInOut',
+          duration: 0.8,
           type: 'spring'
         }}
         className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-x-hidden overflow-y-auto'
