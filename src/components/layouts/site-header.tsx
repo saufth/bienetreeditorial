@@ -36,19 +36,21 @@ export default function SiteHeader () {
   return (
     <>
       <motion.header
-        initial={{ y: 0 }}
-        animate={{ y: visible || isMenuOpen ? 0 : -100 }}
+        initial={{
+          y: 0,
+          borderColor: 'transparent'
+        }}
+        animate={{
+          y: visible || isMenuOpen ? 0 : -100,
+          borderColor: isOnTop || isMenuOpen ? 'transparent' : 'oklch(var(--border))'
+        }}
         transition={{
           duration: 0.5,
-          delay: 0.15,
-          type: 'keyframes'
+          delay: 0.15
         }}
-        className='w-full sticky top-0 left-0 z-40'
+        className='w-full sticky top-0 left-0 z-40 bg-background/80 backdrop-saturate-150 backdrop-blur-lg border-b'
       >
-        <nav
-          className='relative'
-          aria-label={`${siteConfig.name} directory`}
-        >
+        <nav aria-label={`${siteConfig.name} directory`}>
           <div className='container relative z-10'>
             <div
               className='w-full h-[74px] lg:h-24 flex justify-between items-center'
@@ -108,16 +110,6 @@ export default function SiteHeader () {
               </div>
             </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isOnTop || isMenuOpen ? 0 : 1 }}
-            transition={{
-              duration: 1,
-              ease: 'easeInOut',
-              type: 'spring'
-            }}
-            className='absolute inset-0 border-b bg-background/70 backdrop-saturate-150 backdrop-blur-lg'
-          />
         </nav>
       </motion.header>
       <motion.div
@@ -128,9 +120,9 @@ export default function SiteHeader () {
           ease: 'easeInOut',
           type: 'spring'
         }}
-        className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-hidden'
+        className='w-full bg-background/90 backdrop-filter backdrop-blur-md fixed flex flex-col justify-between top-0 left-0 z-30 overflow-x-hidden overflow-y-auto'
       >
-        <div className='container mt-spacing-8 md:mt-spacing-9'>
+        <div className='container mt-spacing-8 md:mt-spacing-9 pb-gutter'>
           <Menu action={closeMenu} />
         </div>
       </motion.div>
