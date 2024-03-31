@@ -57,7 +57,7 @@ export default function Menu ({ action }: { action?: () => void }) {
         className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter order-1 md:order-2'
         aria-label={`${siteConfig.name} directorio`}
       >
-        <div>
+        <div className='order-1 md:order-2'>
           <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
             Navegación
           </div>
@@ -78,7 +78,7 @@ export default function Menu ({ action }: { action?: () => void }) {
             })}
           </ul>
         </div>
-        <div>
+        <div className='order-2 md:order-1'>
           <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
             {servicesLink.title}
           </div>

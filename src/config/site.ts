@@ -67,7 +67,7 @@ export const address: NavItemExternal = {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Bienetre editorial',
+  name: 'Bienetre Editorial',
   slogan: 'Donde los líderes publican',
   description: 'Editorial con más de 13 años en el mercado y operaciones internacionales',
   url: `https://${domain}`,
