@@ -16,6 +16,12 @@ export function ModeToggle () {
     }
   }
 
+  const transitionConfig = {
+    stiffness: 100,
+    damping: 10,
+    type: 'spring'
+  }
+
   return (
     <button
       className='relative'
@@ -28,13 +34,13 @@ export function ModeToggle () {
         viewBox='0 0 15 15'
         fill='currentColor'
         aria-hidden='true'
-        className='h-auto w-6'
+        className='h-auto w-6 scale-0'
         variants={modeVariants}
-        initial={theme}
+        initial={theme === 'light' ? 'dark' : 'light'}
         animate={theme}
         transition={{
           delay: theme === 'light' ? 0.25 : 0,
-          type: 'spring'
+          ...transitionConfig
         }}
       >
         <title>Cambiar a modo oscuro</title>
@@ -63,13 +69,13 @@ export function ModeToggle () {
         viewBox='0 0 15 15'
         fill='currentColor'
         aria-hidden='true'
-        className='absolute top-0 h-auto w-6'
+        className='absolute top-0 h-auto w-6 scale-0'
         variants={modeVariants}
         initial={theme}
         animate={theme === 'light' ? 'dark' : 'light'}
         transition={{
           delay: theme === 'dark' ? 0.25 : 0,
-          type: 'spring'
+          ...transitionConfig
         }}
       >
         <title>Cambiar a modo calro</title>
