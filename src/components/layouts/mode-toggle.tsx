@@ -36,7 +36,7 @@ export function ModeToggle () {
         aria-hidden='true'
         className='h-auto w-6 scale-0'
         variants={modeVariants}
-        initial={theme === 'light' ? 'dark' : 'light'}
+        initial='dark'
         animate={theme}
         transition={{
           delay: theme === 'light' ? 0.25 : 0,
@@ -71,7 +71,7 @@ export function ModeToggle () {
         aria-hidden='true'
         className='absolute top-0 h-auto w-6 scale-0'
         variants={modeVariants}
-        initial={theme}
+        initial='dark'
         animate={theme === 'light' ? 'dark' : 'light'}
         transition={{
           delay: theme === 'dark' ? 0.25 : 0,
