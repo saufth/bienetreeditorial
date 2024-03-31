@@ -62,7 +62,7 @@ export default function SiteHeader () {
                 </NextLink>
               </div>
               <div className='flex items-center gap-x-6'>
-                <Button asChild size='lg' className='font-primary uppercase lg:font-bold text-xs lg:text-sm hidden sm:flex'>
+                <Button asChild size='lg' className='font-primary uppercase lg:font-medium text-xs lg:text-sm hidden sm:flex'>
                   <NextLink href='/contacto' onClick={closeMenu} className='pt-px lg:pt-0'>
                     Contacto
                   </NextLink>
