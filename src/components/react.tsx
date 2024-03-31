@@ -17,7 +17,7 @@ export const Rect = ({ className }: { className?: string }) => (
       }}
       transition={{
         duration: 0.8,
-        delay: 0.3,
+        delay: 0.25,
         stiffness: 100,
         damping: 10,
         type: 'spring'

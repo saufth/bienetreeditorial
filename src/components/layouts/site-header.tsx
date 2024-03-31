@@ -46,7 +46,7 @@ export default function SiteHeader () {
         }}
         transition={{
           duration: 0.5,
-          delay: 0.15
+          delay: 0.25
         }}
         className='w-full sticky top-0 left-0 z-40 bg-background/80 backdrop-saturate-150 backdrop-blur-lg border-b'
       >
