@@ -9,7 +9,6 @@ import { fontPrimary, fontHeader, fontSans } from '@/lib/fonts'
 import { services } from '@/config/services'
 import { siteConfig } from '@/config/site'
 import '@/styles/globals.css'
-import Pointer from '@/components/layouts/pointer'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -67,7 +66,6 @@ export default function RootLayout ({ children }: PropsWithChildren) {
           {children}
           <Toaster />
           <TailwindIndicator />
-          <Pointer />
         </ThemeProvider>
         <GoogleSearchScript />
       </body>

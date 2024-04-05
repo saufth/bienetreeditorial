@@ -1,11 +1,14 @@
+import { calculateYears } from '@/lib/utils'
 import {
   type Article,
   type Section
 } from '@/types'
 
-export const filosophy: Section = {
+const birthDate = new Date(2010, 3, 20)
+
+export const aboutUs: Section = {
   title: 'Acerca de nosotros',
-  description: 'Somos expertos.',
+  description: `Somo un equipo de profesionales con más de ${calculateYears(birthDate, new Date())} años de experiencia en el negocio editorial. Nuestro objetivo es democratizar la literatura y el conocimiento, facilitando el acceso al consumo y producción de la literatura y el arte.`,
   items: [
     {
       title: 'Misión',
