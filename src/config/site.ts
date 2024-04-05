@@ -1,11 +1,9 @@
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 import { whatsappUrl } from '@/lib/utils'
-import { services } from '@/config/services'
 import type {
   SiteConfig,
   MainNavItem,
   NavItem,
-  NavItemWithChildren,
   NavItemExternal
 } from '@/types'
 
@@ -14,13 +12,10 @@ export const author: Author = {
   url: 'https://github.com/saufth'
 }
 
-const servicesNav: NavItemWithChildren[] = services.map(({ title, slug }) => ({ title, href: slug! }))
-
 export const siteNav: MainNavItem[] = [
   {
     title: 'Nuestros servicios',
-    href: '/servicios',
-    items: servicesNav
+    href: '/servicios'
   },
   {
     title: 'Acerca de nosotros',

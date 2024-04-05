@@ -10,12 +10,10 @@ import {
   address
 } from '@/config/site'
 
-const servicesLink = siteConfig.mainNav.find(({ title }) => title === 'Nuestros servicios')!
-
 export default function Menu ({ action }: { action?: () => void }) {
   return (
     <div className='cols-container gap-y-spacing-6'>
-      <div className='w-6-cols sm:w-8-cols lg:w-5-cols xl:w-6-cols flex flex-col gap-y-spacing-4 order-2 md:order-1'>
+      <div className='w-6-cols sm:w-5-cols lg:w-9-cols flex flex-col gap-y-spacing-4 order-2 sm:order-1'>
         <Link
           href={whatsappUrl(contactPhone)}
           onClick={action}
@@ -54,37 +52,16 @@ export default function Menu ({ action }: { action?: () => void }) {
         <SocialNav items={socialNav} action={action} />
       </div>
       <nav
-        className='w-6-cols sm:w-8-cols lg:w-7-cols xl:w-6-cols flex flex-col md:flex-row lg:justify-around gap-spacing-6 lg:gap-gutter order-1 md:order-2'
+        className='w-6-cols sm:w-3-cols lg:w-3-cols order-1 sm:order-2'
         aria-label={`${siteConfig.name} directorio`}
       >
-        <div className='order-1 md:order-2'>
+        <div>
           <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
             Navegación
           </div>
           <ul className='space-y-spacing-3 mt-spacing-4'>
             {siteConfig.mainNav.map((navItem, key) => {
               return navItem.title !== 'Soluciones' && (
-                <li key={key}>
-                  <Link
-                    href={navItem.href}
-                    onClick={action}
-                    aria-label={navItem.title}
-                    className='text-lg sm:text-xl font-bold'
-                  >
-                    {navItem.title}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-        <div className='order-2 md:order-1'>
-          <div className='text-xl sm:text-2xl text-muted-foreground font-medium'>
-            {servicesLink.title}
-          </div>
-          <ul className='space-y-spacing-3 mt-spacing-4'>
-            {servicesLink.items!.map((navItem, key) => {
-              return navItem.title !== '' && (
                 <li key={key}>
                   <Link
                     href={navItem.href}

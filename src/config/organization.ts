@@ -4,16 +4,16 @@ import {
 } from '@/types'
 
 export const filosophy: Section = {
-  title: 'Nuestra filosofía',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.',
+  title: 'Acerca de nosotros',
+  description: 'Somos expertos.',
   items: [
     {
-      title: 'Nuestra misión',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.'
+      title: 'Misión',
+      description: 'Sabemos cómo hacer que este negocio sea más justo para nuestros autores, por eso, buscamos facilitar el acceso al consumo y producción de la literatura y el conocimiento. Asimismo, buscamos democratizar la posibilidad de escribir un libro, vivir de ello y dejar un legado para las futuras generaciones.'
     },
     {
-      title: 'Nuestra visión',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.'
+      title: 'Visión',
+      description: 'Con miras a los tiempos actuales y más de 12 años de experiencia en el negocio editorial, nuestra visión es transformar el mercado a nivel mundial, innovando en la forma de crear y consumir la literatura, el arte y el conocimiento.'
     }
   ]
 }

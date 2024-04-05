@@ -9,6 +9,7 @@ import { fontPrimary, fontHeader, fontSans } from '@/lib/fonts'
 import { services } from '@/config/services'
 import { siteConfig } from '@/config/site'
 import '@/styles/globals.css'
+import Pointer from '@/components/layouts/pointer'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -58,7 +59,7 @@ export default function RootLayout ({ children }: PropsWithChildren) {
         fontSans.variable,
         fontPrimary.variable,
         fontHeader.variable,
-        'font-sans antialiased !scroll-smooth select-none'
+        'font-sans antialiased !scroll-smooth'
       )}
     >
       <body className='bg-background min-h-screen'>
@@ -66,6 +67,7 @@ export default function RootLayout ({ children }: PropsWithChildren) {
           {children}
           <Toaster />
           <TailwindIndicator />
+          <Pointer />
         </ThemeProvider>
         <GoogleSearchScript />
       </body>
