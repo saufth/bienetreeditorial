@@ -9,6 +9,12 @@ const birthDate = new Date(2010, 3, 20)
 export const aboutUs: Section = {
   title: 'Acerca de nosotros',
   description: `Somo un equipo de profesionales con más de ${calculateYears(birthDate, new Date())} años de experiencia en el negocio editorial. Nuestro objetivo es democratizar la literatura y el conocimiento, facilitando el acceso al consumo y producción de la literatura y el arte.`,
+  image: {
+    src: '/images/home-about-us.webp',
+    alt: 'Especialistas en el negocio editorial discutiendo con su compañera sobre un proyecto de edición de un libro.',
+    width: 2750,
+    height: 2750
+  },
   items: [
     {
       title: 'Misión',
