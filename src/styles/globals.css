@@ -166,11 +166,11 @@
   }
 
   .f-display-2 {
-    @apply text-[2.3rem] sm:text-[3.4375rem] xl:text-[4.5625rem] leading-[120%];
+    @apply text-[2.3rem] sm:text-[3.4375rem] xl:text-[4.5625rem] leading-[120%] sm:leading-[120%] xl:leading-[130%];
   }
 
   .f-display-3 {
-    @apply text-[2rem] sm:text-[2.625rem] xl:text-[3.8rem] leading-[120%] sm:leading-[120%];
+    @apply text-[2rem] sm:text-[2.625rem] xl:text-[3.8rem] leading-[120%] sm:leading-[120%] xl:leading-[130%];
   }
 
   .f-heading-1 {
@@ -194,7 +194,7 @@
   }
 
   .f-subhead-3 {
-    @apply text-[1rem] xl:text-[1.125rem] leading-[120%] sm:leading-[120%] xl:leading-[110%];
+    @apply text-[1.125rem] xl:text-[1.2rem] leading-[120%] sm:leading-[120%] xl:leading-[130%] -tracking-[0.01em];
   }
 
   .f-body-1 {
