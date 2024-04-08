@@ -4,6 +4,48 @@ import { Rect } from '@/components/react'
 import { aboutUs } from '@/config/organization'
 import { siteConfig } from '@/config/site'
 import { products } from '@/config/products'
+import { CardStack } from '@/components/cards/card-stack'
+
+const testimonials = [
+  {
+    id: 0,
+    name: 'Manu Arora',
+    designation: 'Senior Software Engineer',
+    content: (
+      <p>
+        These cards are amazing, <b>I want to use them</b> in my
+        project. Framer motion is a godsend ngl tbh fam 🙏
+      </p>
+    )
+  },
+  {
+    id: 1,
+    name: 'Elon Musk',
+    designation: 'Senior Shitposter',
+    content: (
+      <p>
+        I dont like this Twitter thing,{' '}
+        <b>deleting it right away</b> because yolo. Instead, I
+        would like to call it <b>X.com</b> so that it can easily
+        be confused with adult sites.
+      </p>
+    )
+  },
+  {
+    id: 2,
+    name: 'Tyler Durden',
+    designation: 'Manager Project Mayhem',
+    content: (
+      <p>
+        The first rule of
+        <b>Fight Club</b> is that you do not talk about fight
+        club. The second rule of
+        <b>Fight club</b> is that you DO NOT TALK about fight
+        club.
+      </p>
+    )
+  }
+]
 
 const headlineData = siteConfig.slogan.split(' ')
 
@@ -36,7 +78,7 @@ export default function IndexPage () {
         </div>
       </section>
       <section>
-        <div className='container py-spacing-9'>
+        <div className='container pt-spacing-9'>
           <header>
             <h2 className='f-subhead-3 font-light text-muted-foreground uppercase font-primary'>
               {aboutUs.title}
@@ -75,9 +117,9 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section id='soluciones' className='mt-spacing-7'>
+      <section id='soluciones' className='pt-spacing-9'>
         <div className='container'>
-          <div className='text-right sm:text-left'>
+          <div>
             <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Publicaciones recientes
             </h2>
@@ -85,7 +127,7 @@ export default function IndexPage () {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             </p>
           </div>
-          <div className='cols-container py-spacing-6'>
+          <div className='cols-container mt-spacing-6'>
             {products.map((product, key) => (
               <article className='w-8-cols sm:w-1/3-cols lg:w-4-cols mt-spacing-6' key={key}>
                 <div>
@@ -112,6 +154,23 @@ export default function IndexPage () {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className='container pt-spacing-9'>
+          <div className='cols-container space-y-spacing-7 md:space-y-0'>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+                Testimonios
+              </h2>
+              <p className='f-display-2 mt-spacing-3 text-balance font-header x:leading-[150%] sm:leading-[140%] xl:leading-[140%] -tracking-tight'>
+                Lo que dicen de nosotros.
+              </p>
+            </div>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <CardStack className='w-full h-xs' items={testimonials} />
+            </div>
           </div>
         </div>
       </section>
