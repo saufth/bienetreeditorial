@@ -4,7 +4,7 @@ export const products = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.',
     author: 'Ana Simó',
     image: {
-      src: '/images/sobrevivir-a-la infidelidad-ana-simó.webp',
+      src: '/images/products/sobrevivir-a-la-infidelidad-ana-simó.webp',
       alt: 'Protada del libro Sobrevivir a la infidelidad de Ana Simó',
       width: 900,
       height: 1350
@@ -15,7 +15,7 @@ export const products = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.',
     author: 'Giselle Escaño',
     image: {
-      src: '/images/método-gi-giselle-escaño.webp',
+      src: '/images/products/método-gi-giselle-escaño.webp',
       alt: 'Portada del libro Método Gi de Giselle Escaño',
       width: 900,
       height: 1350
@@ -26,7 +26,7 @@ export const products = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.',
     author: 'Darnetty Lugo',
     image: {
-      src: '/images/el-arte-de-cobrar-de-forma-efectiva-arnetty-lugo.webp',
+      src: '/images/products/el-arte-de-cobrar-de-forma-efectiva-arnetty-lugo.webp',
       alt: 'product1',
       width: 900,
       height: 1350

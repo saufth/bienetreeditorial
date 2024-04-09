@@ -9,41 +9,78 @@ import { CardStack } from '@/components/cards/card-stack'
 const testimonials = [
   {
     id: 0,
-    name: 'Manu Arora',
-    designation: 'Senior Software Engineer',
+    name: 'María Esther',
+    designation: 'Autora',
     content: (
       <p>
-        These cards are amazing, <b>I want to use them</b> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
+        Valoro la comunicación clara, oportuna y a tiempo que
+        mantiene el equipo Bienetre con el cliente.{' '}
+        <b>Siempre dispuestos a atender nuestras dudas con mucho profesionalismo.</b>
+        Estoy muy agradecida y bendecida de tenerlos en este camino.
       </p>
-    )
+    ),
+    image: {
+      src: '/images/testimonials/home-testimonials0.webp',
+      alt: 'María Esther, autora.',
+      width: 240,
+      height: 240
+    }
   },
   {
     id: 1,
-    name: 'Elon Musk',
-    designation: 'Senior Shitposter',
+    name: 'Manu Arora',
+    designation: 'Autora',
     content: (
       <p>
-        I dont like this Twitter thing,{' '}
-        <b>deleting it right away</b> because yolo. Instead, I
-        would like to call it <b>X.com</b> so that it can easily
-        be confused with adult sites.
+        Al trabajar con <b>Bienetre</b>, recibí un trato personalizado,{' '}
+        <b>calidad en el servicio y cumplimiento en las fechas</b>.
+        Me gustó mucho su honestidad, ya que me habían hecho un
+        presupuesto, pero al final, el libro tuvo una cantidad
+        menor de hojas, y realizaron el ajuste del precio al final para
+        cobrar menos de lo que habían presupuestado al inicio.
       </p>
-    )
+    ),
+    image: {
+      src: '/images/testimonials/home-testimonials1.webp',
+      alt: 'Manu Aurora, autora.',
+      width: 240,
+      height: 240
+    }
   },
   {
     id: 2,
-    name: 'Tyler Durden',
-    designation: 'Manager Project Mayhem',
+    name: 'Pamela Bernal',
+    designation: 'Autora',
     content: (
       <p>
-        The first rule of
-        <b>Fight Club</b> is that you do not talk about fight
-        club. The second rule of
-        <b>Fight club</b> is that you DO NOT TALK about fight
-        club.
+        Aprecio a la organización y <b>buena atención del equipo Bienetre</b>{' '}
+        en sus respectivas áreas. Tienen <b>precios razonables y planes de pagos</b>.
+        Obtuve un trabajo final de calidad y excelencia.
       </p>
-    )
+    ),
+    image: {
+      src: '/images/testimonials/home-testimonials2.webp',
+      alt: 'Pamela Bernal, autora.',
+      width: 240,
+      height: 240
+    }
+  },
+  {
+    id: 3,
+    name: 'Nilvia Sención',
+    designation: 'Autora',
+    content: (
+      <p>
+        El equipo <b>Bienetre</b> tiene un <b>excelente servicio al cliente</b>,
+        calidad humana y <b>cercanía con el cliente</b> sin perder el profesionalismo.
+      </p>
+    ),
+    image: {
+      src: '/images/testimonials/home-testimonials3.webp',
+      alt: 'Nilvia Sención, autora.',
+      width: 240,
+      height: 240
+    }
   }
 ]
 
@@ -169,7 +206,7 @@ export default function IndexPage () {
               </p>
             </div>
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <CardStack className='w-full h-xs' items={testimonials} />
+              <CardStack className='w-full h-[480px]' items={testimonials} />
             </div>
           </div>
         </div>

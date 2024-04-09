@@ -2,6 +2,8 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { type ImageProps } from '@/types'
+import Image from 'next/image'
 
 let interval: any
 
@@ -10,6 +12,7 @@ interface Card {
   name: string
   designation: string
   content: ReactNode
+  image: ImageProps
 }
 
 interface CardStackProps {
@@ -42,7 +45,7 @@ export const CardStack = ({
         newArray.unshift(newArray.pop()!) // move the last element to the front
         return newArray
       })
-    }, 4000)
+    }, 5000)
   }
 
   return (
@@ -64,13 +67,22 @@ export const CardStack = ({
             <div className='f-subhead-2 font-normal text-neutral-700 dark:text-neutral-200 italic text-blance'>
               {card.content}
             </div>
-            <div>
-              <p className='f-subhead-3 text-neutral-500 font-medium dark:text-white'>
-                {card.name}
-              </p>
-              <p className='f-subhead-3 text-neutral-400 font-normal dark:text-neutral-200'>
-                {card.designation}
-              </p>
+            <div className='flex gap-x-4 items-center'>
+              <Image
+                src={card.image.src}
+                alt={card.image.alt}
+                width={card.image.width}
+                height={card.image.height}
+                className='w-16 h-16 rounded-full'
+              />
+              <div>
+                <p className='f-subhead-3 text-neutral-500 font-medium dark:text-white'>
+                  {card.name}
+                </p>
+                <p className='f-subhead-3 text-neutral-400 font-normal dark:text-neutral-200'>
+                  {card.designation}
+                </p>
+              </div>
             </div>
           </motion.div>
         )
