@@ -172,7 +172,7 @@ export default function IndexPage () {
                       />
                     )}
                   </div>
-                  <div className='flex items-center gap-x-2 self-end f-body-1 font-medium group-hover:underline'>
+                  <div className='flex items-center gap-x-2 self-end f-body-1 font-medium group-hover:underline italic'>
                     {client.name}
                     <ArrowRightIcon className='w-auto h-4 fill-card-foreground' />
                   </div>
