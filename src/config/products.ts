@@ -1,4 +1,6 @@
-export const products = [
+import { type Product } from '@/types'
+
+export const products: Product[] = [
   {
     title: 'Sobrevivir a la infidelidad',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec.',

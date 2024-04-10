@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react'
 import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 
 export interface Title {
@@ -63,6 +64,17 @@ export type Subcategory = ItemOptional & Partial<Pick<Section, 'items'>>
 
 export interface Category extends ItemOptional {
   items: Subcategory[]
+}
+
+export interface Product extends ItemOptional {
+  author: string
+}
+
+export interface CardStackItem {
+  name: string
+  designation: string
+  content: ReactNode
+  image: ImageProps
 }
 
 export interface SiteConfig {

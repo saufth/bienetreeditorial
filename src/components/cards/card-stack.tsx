@@ -1,22 +1,14 @@
 'use client'
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { type ImageProps } from '@/types'
-import Image from 'next/image'
+import { type CardStackItem } from '@/types'
 
 let interval: any
 
-interface Card {
-  id: number
-  name: string
-  designation: string
-  content: ReactNode
-  image: ImageProps
-}
-
-interface CardStackProps {
-  items: Card[]
+export interface CardStackProps<T = CardStackItem> {
+  items: T[]
   offset?: number
   scaleFactor?: number
   className?: string
@@ -30,7 +22,7 @@ export const CardStack = ({
 }: CardStackProps) => {
   const CARD_OFFSET = offset || 10
   const SCALE_FACTOR = scaleFactor || 0.06
-  const [cards, setCards] = useState<Card[]>(items)
+  const [cards, setCards] = useState<CardStackItem[]>(items)
 
   useEffect(() => {
     startFlipping()
@@ -40,7 +32,7 @@ export const CardStack = ({
 
   const startFlipping = () => {
     interval = setInterval(() => {
-      setCards((prevCards: Card[]) => {
+      setCards((prevCards: CardStackItem[]) => {
         const newArray = [...prevCards] // create a copy of the array
         newArray.unshift(newArray.pop()!) // move the last element to the front
         return newArray
@@ -53,7 +45,7 @@ export const CardStack = ({
       {cards.map((card, index) => {
         return (
           <motion.div
-            key={card.id}
+            key={index}
             className='absolute bg-card text-card-foreground h-full w-full p-8 shadow-xl border dark:border-white/[0.1] shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between'
             style={{
               transformOrigin: 'top center'

@@ -1,112 +1,38 @@
+import { Highlight } from '@/components/highlight'
 import Image from 'next/image'
-import { Icons } from '@/components/icons'
-import { Rect } from '@/components/react'
-import { aboutUs } from '@/config/organization'
-import { siteConfig } from '@/config/site'
-import { products } from '@/config/products'
 import { CardStack } from '@/components/cards/card-stack'
+import { Icons } from '@/components/icons'
+import { aboutUs, testimonials, trustedBy } from '@/config/organization'
+import { products } from '@/config/products'
+import { siteConfig } from '@/config/site'
+import { Link } from '@/components/ui/link'
+import { ArrowRightIcon } from '@radix-ui/react-icons'
+import NextLink from '@/components/ui/next-link'
 
-const testimonials = [
-  {
-    id: 0,
-    name: 'María Esther',
-    designation: 'Autora',
-    content: (
-      <p>
-        Valoro la comunicación clara, oportuna y a tiempo que
-        mantiene el equipo Bienetre con el cliente.{' '}
-        <b>Siempre dispuestos a atender nuestras dudas con mucho profesionalismo.</b>
-        Estoy muy agradecida y bendecida de tenerlos en este camino.
-      </p>
-    ),
-    image: {
-      src: '/images/testimonials/home-testimonials0.webp',
-      alt: 'María Esther, autora.',
-      width: 240,
-      height: 240
-    }
-  },
-  {
-    id: 1,
-    name: 'Manu Arora',
-    designation: 'Autora',
-    content: (
-      <p>
-        Al trabajar con <b>Bienetre</b>, recibí un trato personalizado,{' '}
-        <b>calidad en el servicio y cumplimiento en las fechas</b>.
-        Me gustó mucho su honestidad, ya que me habían hecho un
-        presupuesto, pero al final, el libro tuvo una cantidad
-        menor de hojas, y realizaron el ajuste del precio al final para
-        cobrar menos de lo que habían presupuestado al inicio.
-      </p>
-    ),
-    image: {
-      src: '/images/testimonials/home-testimonials1.webp',
-      alt: 'Manu Aurora, autora.',
-      width: 240,
-      height: 240
-    }
-  },
-  {
-    id: 2,
-    name: 'Pamela Bernal',
-    designation: 'Autora',
-    content: (
-      <p>
-        Aprecio a la organización y <b>buena atención del equipo Bienetre</b>{' '}
-        en sus respectivas áreas. Tienen <b>precios razonables y planes de pagos</b>.
-        Obtuve un trabajo final de calidad y excelencia.
-      </p>
-    ),
-    image: {
-      src: '/images/testimonials/home-testimonials2.webp',
-      alt: 'Pamela Bernal, autora.',
-      width: 240,
-      height: 240
-    }
-  },
-  {
-    id: 3,
-    name: 'Nilvia Sención',
-    designation: 'Autora',
-    content: (
-      <p>
-        El equipo <b>Bienetre</b> tiene un <b>excelente servicio al cliente</b>,
-        calidad humana y <b>cercanía con el cliente</b> sin perder el profesionalismo.
-      </p>
-    ),
-    image: {
-      src: '/images/testimonials/home-testimonials3.webp',
-      alt: 'Nilvia Sención, autora.',
-      width: 240,
-      height: 240
-    }
-  }
-]
+const Headline = () => {
+  const headlineData = siteConfig.slogan.split(' ')
 
-const headlineData = siteConfig.slogan.split(' ')
+  return (
+    <h1 className='f-display-1 font-header text-right'>
+      {headlineData.map((word, key) => {
+        return key < (headlineData.length - 1)
+          ? `${word} `
+          : (
+            <Highlight key={key}>
+              {`${word}.`}
+            </Highlight>
+            )
+      })}
+    </h1>
+  )
+}
 
 export default function IndexPage () {
   return (
     <>
       <section className='py-spacing-7'>
         <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
-          <div>
-            <h1
-              className='f-display-1 font-header text-right'
-            >
-              {headlineData.map((word, key) => {
-                return key < (headlineData.length - 1)
-                  ? `${word} `
-                  : (
-                    <span key={key} className='w-full block relative z-0'>
-                      {`${word}.`}
-                      <Rect />
-                    </span>
-                    )
-              })}
-            </h1>
-          </div>
+          <Headline />
           <div className='mt-spacing-6 max-w-md lg:max-w-lg'>
             <p className='text-muted-foreground f-subhead-2 text-right text-balance italic'>
               {siteConfig.description}
@@ -154,7 +80,7 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section id='soluciones' className='pt-spacing-9'>
+      <section className='pt-spacing-9'>
         <div className='container'>
           <div>
             <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
@@ -168,14 +94,16 @@ export default function IndexPage () {
             {products.map((product, key) => (
               <article className='w-8-cols sm:w-1/3-cols lg:w-4-cols mt-spacing-6' key={key}>
                 <div>
-                  <Image
-                    src={product.image.src}
-                    alt={product.image.alt}
-                    width={product.image.width}
-                    height={product.image.height}
-                    sizes='(max-width: 744px) 100vw, (max-width: 1280px) 50vw, 500px'
-                    loading='lazy'
-                  />
+                  {product.image && (
+                    <Image
+                      src={product.image.src}
+                      alt={product.image.alt}
+                      width={product.image.width}
+                      height={product.image.height}
+                      sizes='(max-width: 744px) 100vw, (max-width: 1280px) 50vw, 500px'
+                      loading='lazy'
+                    />
+                  )}
                 </div>
                 <div className='mt-2'>
                   <h3 className='f-subhead-2 sm:f-subhead-3 font-medium text-muted-foreground italic'>
@@ -208,6 +136,49 @@ export default function IndexPage () {
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
               <CardStack className='w-full h-[480px]' items={testimonials} />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className='pt-spacing-9'>
+        <div className='container'>
+          <div>
+            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              Nuestros clientes
+            </h2>
+            <p className='f-display-3 mt-spacing-3 text-balance font-header x:leading-[150%] sm:leading-[140%] xl:leading-[140%] -tracking-tight'>
+              Ellos confiaron en nosotros.
+            </p>
+          </div>
+          <div className='cols-container items-center justify-center gap-y-gutter mt-spacing-6'>
+            {trustedBy.map((client, key) => {
+              const imageHeightStyles = ['h-16 sm:h-[72px] xl:h-20', 'h-9 sm:h-12 xl:h-14', 'h-[52px] sm:h-14 xl:h-16', 'h-8 sm:h-10 xl:h-12', 'h-9 sm:h-12 xl:h-14']
+
+              return (
+                <NextLink
+                  href={client.url}
+                  target='_blank'
+                  rel='noreferrer nooponer text-card-foreground'
+                  key={key}
+                  className='w-6-cols sm:w-1/2-cols lg:w-1/3-cols h-48 flex flex-col justify-between bg-card border p-6 xl:p-8 shadow-md group'
+                >
+                  <div>
+                    {client.image && (
+                      <Image
+                        src={client.image.src}
+                        alt={client.image.alt}
+                        width={client.image.width}
+                        height={client.image.height}
+                        className={`w-auto ${imageHeightStyles[key]}`}
+                      />
+                    )}
+                  </div>
+                  <div className='flex items-center gap-x-2 self-end f-body-1 font-medium group-hover:underline'>
+                    {client.name}
+                    <ArrowRightIcon className='w-auto h-4 fill-card-foreground' />
+                  </div>
+                </NextLink>
+              )
+            })}
           </div>
         </div>
       </section>
