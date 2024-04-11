@@ -6,7 +6,7 @@ export interface Title {
 }
 
 export interface Description {
-  description: string | string[]
+  description: string
 }
 
 export interface Label {
@@ -50,23 +50,21 @@ export interface Item extends HeadingWithImageLabel {
   slug?: string
 }
 
-export type ItemOptional = Omit<Item, 'image' | 'description'> & Partial<ImageData & Description>
-
-export interface Article extends ItemOptional {
+export interface Article extends Item {
   items: string[]
 }
 
-export interface Section extends ItemOptional {
-  items: ItemOptional[]
+export interface Section extends Item {
+  items: Item[]
 }
 
-export type Subcategory = ItemOptional & Partial<Pick<Section, 'items'>>
+export type Subcategory = Item & Partial<Pick<Section, 'items'>>
 
-export interface Category extends ItemOptional {
+export interface Category extends Item {
   items: Subcategory[]
 }
 
-export interface Product extends ItemOptional {
+export interface Product extends Item {
   author: string
 }
 

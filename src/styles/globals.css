@@ -124,6 +124,10 @@
     @apply border-border text-foreground;
   }
 
+  p {
+    @apply italic;
+  }
+
   ::selection {
     @apply bg-accent text-accent-foreground;
   }
@@ -202,7 +206,7 @@
   }
 
   .f-header {
-    @apply font-header x:leading-[150%] sm:leading-[140%] xl:leading-[140%] -tracking-tight;
+    @apply font-header x:leading-[160%] sm:leading-[160%] xl:leading-[160%] -tracking-tight;
   }
 
   /* Container */

@@ -1,12 +1,12 @@
 'use client'
 import { useState } from 'react'
-import NextLink from '@/components/ui/next-link'
-import Menu from '@/components/layouts/menu'
-import { Icons } from '@/components/icons'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { siteConfig } from '@/config/site'
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
+import { Icons } from '@/components/icons'
 import { ModeToggle } from '@/components/layouts/mode-toggle'
+import Menu from '@/components/layouts/menu'
+import NextLink from '@/components/ui/next-link'
+import { siteConfig } from '@/config/site'
 
 export default function SiteHeader () {
   const { scrollYProgress } = useScroll()

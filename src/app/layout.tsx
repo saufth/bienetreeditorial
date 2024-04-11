@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     siteConfig.name,
-    ...services.map(({ title }) => title)
+    siteConfig.slogan,
+    services.title,
+    ...services.items.map(({ title }) => title)
   ],
   authors: siteConfig.author,
   creator: siteConfig.author.name,
@@ -43,7 +45,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#000000' },
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
     { media: '(prefers-color-scheme: dark)', color: '#000000' }
   ],
   colorScheme: 'normal'

@@ -22,6 +22,10 @@ export const siteNav: MainNavItem[] = [
     href: '/nosotros'
   },
   {
+    title: 'Preguntas frecuentes',
+    href: '/faq'
+  },
+  {
     title: 'Ponte en contacto',
     href: '/contacto'
   }
