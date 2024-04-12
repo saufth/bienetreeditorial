@@ -4,7 +4,7 @@ import { Link } from '../ui/link'
 
 export default function SiteFooter () {
   return (
-    <footer className='border-t mt-spacing-9'>
+    <footer className='border-t mt-spacing-7'>
       <div className='container'>
         <div className='py-spacing-7'>
           <Menu />
