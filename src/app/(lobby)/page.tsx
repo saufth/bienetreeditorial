@@ -90,7 +90,7 @@ export default function IndexPage () {
       <div>
         <div className='container'>
           <div className='cols-container mt-spacing-9'>
-            <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0'>
+            <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols'>
               <div className='sm:max-w-lg sm:pt-spacing-6 lg:pt-spacing-7'>
                 <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
                   {services.label}
@@ -112,7 +112,7 @@ export default function IndexPage () {
                 </Button>
               </div>
             </div>
-            <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-6-cols bg-secondary'>
+            <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-6-cols bg-secondary mt-spacing-6 md:mt-0'>
               <Image
                 src='/images/home-services.webp'
                 alt='Las manos de dos personas sosteniendo un libro y apuntando al contenido en un escritorio con un monitor.'
