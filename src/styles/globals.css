@@ -49,8 +49,8 @@
     --foreground: 100% 0 0; /* #FFFFFF */
     --card: 25.37% 0 0; /* #222222 */
     --card-foreground: 98.48% 0 0; /* #FAFAFA */
-    --popover: 100% 0 0; /* #FFFFFF */
-    --popover-foreground: 14.05% 0.004 285.82; /* #09090B */
+    --popover: 25.37% 0 0; /* #222222 */
+    --popover-foreground: 98.48% 0 0; /* #FAFAFA */
     --primary: 100% 0 0; /* #FFFFFF */
     --primary-foreground: 0% 0 0; /* #000000 */
     --secondary: 0% 0 0; /* #000000 */

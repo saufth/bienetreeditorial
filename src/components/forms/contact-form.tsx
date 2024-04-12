@@ -38,7 +38,7 @@ export default function ContactForm () {
     defaultValues: {
       name: '',
       email: '',
-      category: services[0]!.title,
+      category: services.items[0]!.title,
       subject: ''
     }
   })
@@ -138,13 +138,13 @@ export default function ContactForm () {
                 </FormControl>
                 <SelectContent>
                   <SelectGroup>
-                    {services.map(
+                    {services.items.map(
                       (service) => (
                         <SelectItem
                           key={service.title}
                           value={service.title}
                           placeholder='Selecciona una categoría'
-                          className='rounded-sm hover:cursor-pointer group-hover:bg-secondary'
+                          className='rounded-none hover:cursor-pointer group-hover:bg-secondary'
                         >
                           {service.title}
                         </SelectItem>
