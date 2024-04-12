@@ -56,7 +56,7 @@ export const CardStack = ({
               zIndex: cards.length - index //  decrease z-index for the cards that are behind
             }}
           >
-            <div className='f-subhead-2 font-normal text-neutral-700 dark:text-neutral-200 text-blance'>
+            <div className='f-subhead-2 font-normal text-card-foreground text-blance'>
               {card.content}
             </div>
             <div className='flex gap-x-4 items-center'>
@@ -68,10 +68,10 @@ export const CardStack = ({
                 className='w-16 h-16 rounded-full'
               />
               <div>
-                <p className='f-subhead-3 text-neutral-500 font-medium dark:text-white'>
+                <p className='f-subhead-3 text-card-foreground font-medium'>
                   {card.name}
                 </p>
-                <p className='f-subhead-3 text-neutral-400 font-normal dark:text-neutral-200'>
+                <p className='f-subhead-3 text-muted-foreground'>
                   {card.designation}
                 </p>
               </div>
