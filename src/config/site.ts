@@ -19,11 +19,19 @@ export const siteNav: MainNavItem[] = [
   },
   {
     title: 'Acerca de nosotros',
-    href: '/nosotros'
+    href: '/#nosotros'
+  },
+  {
+    title: 'Testimonios',
+    href: '/#testimonios'
   },
   {
     title: 'Preguntas frecuentes',
-    href: '/faq'
+    href: '/#preguntas-frecuentes'
+  },
+  {
+    title: 'Nuestros clientes',
+    href: '/#clientes'
   },
   {
     title: 'Ponte en contacto',
@@ -67,8 +75,8 @@ export const address: NavItemExternal = {
 
 export const siteConfig: SiteConfig = {
   name: 'Bienetre Editorial',
-  slogan: 'Donde los líderes publican',
-  description: 'Impulsamos a autores a publicar sus obras y a llegar a lectores en todo el mundo.',
+  slogan: 'Donde los ganadores publican',
+  description: 'Somos la empresa editorial matriz con más de 13 años en el mercado y operaciones internacionales.',
   url: `https://${domain}`,
   author,
   mainNav: [

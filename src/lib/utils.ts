@@ -31,12 +31,3 @@ export function formatPhoneNumber (phoneNumber: string) {
 export function whatsappUrl (phoneNumber: string) {
   return `https://wa.me/${phoneNumber}`
 }
-
-export function calculateYears (dateA: Date, dateB: Date) {
-  let years = new Date(dateB).getFullYear() - new Date(dateA).getFullYear()
-  let month = new Date(dateB).getMonth() - new Date(dateA).getMonth()
-  const dateDiff = new Date(dateB).getDay() - new Date(dateA).getDay()
-  if (dateDiff < 0) month -= 1
-  if (month < 0) years -= 1
-  return years
-}

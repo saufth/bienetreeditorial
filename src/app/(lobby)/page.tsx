@@ -1,11 +1,17 @@
 import Image from 'next/image'
 import NextLink from '@/components/ui/next-link'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import { CardStack } from '@/components/cards/card-stack'
 import { Headline } from '@/components/headline'
 import { Icons } from '@/components/icons'
-import { organizationAge, testimonials, trustedBy } from '@/config/organization'
+import { aboutUs, faq, testimonials, trustedBy } from '@/config/organization'
 import { products } from '@/config/products'
 import { siteConfig } from '@/config/site'
 import { services } from '@/config/services'
@@ -23,28 +29,47 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <div className='bg-card border-y mt-spacing-7'>
-        <div className='max-w-xl md:max-w-5xl mx-auto px-gutter py-spacing-9'>
-          <Icons.Logomark className='w-12 sm:w-16 h-auto mx-auto' />
-          <p className='f-heading-1 text-muted-foreground font-light text-center x:leading-[150%] sm:leading-[160%] xl:leading-[160%] mt-spacing-7 [&>b]:border-b'>
-            Somo <b>expertos en literatura y edición</b>. Llevamos <b>más de {organizationAge} años</b>{' '}
-            <b>mejorando la vida de autores</b> en todo el mundo. <b>Nos apasionan los libros</b> y
-            queremos que más gente tenga acceso y se interese por ellos.
-          </p>
-          <Button
-            asChild
-            size='lg'
-            className='flex mt-spacing-6 mx-auto'
-          >
-            <NextLink
-              href='/nosotros'
-              className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
-            >
-              Conocenos
-            </NextLink>
-          </Button>
+      <section id='nosotros'>
+        <div className='container pt-spacing-9'>
+          <header>
+            <h2 className='f-subhead-3 font-light text-muted-foreground uppercase font-primary'>
+              {aboutUs.label}
+            </h2>
+            <p className='sr-only'>{siteConfig.name}</p>
+            <Icons.Logoname className='w-full xs:w-auto h-auto xs:h-24 sm:h-36 xl:h-48 mt-spacing-4' />
+            <p className='xs:ml-spacing-5 max-w-6xl f-subhead-1 text-muted-foreground mt-spacing-7 text-balance italic'>
+              {aboutUs.description}
+            </p>
+          </header>
+          <div className='space-y-spacing-7 mt-spacing-7'>
+            {aboutUs.items.map((aboutUsItem, key) => (
+              <article className='cols-container mt-spacing-3 odd:flex-row-reverse' key={key}>
+                <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-5-cols mt-spacing-6 md:mt-0 order-2'>
+                  <div className='sm:max-w-lg sm:pt-spacing-6 lg:pt-spacing-7'>
+                    <h3 className='f-heading-2 f-header'>
+                      {aboutUsItem.title}
+                    </h3>
+                    <p className='f-subhead-2 text-muted-foreground text-balance mt-spacing-5'>
+                      {aboutUsItem.description}.
+                    </p>
+                  </div>
+                </div>
+                <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-7-cols bg-secondary order-1'>
+                  <Image
+                    src={aboutUsItem.image.src}
+                    alt={aboutUsItem.image.alt}
+                    width={aboutUsItem.image.width}
+                    height={aboutUsItem.image.height}
+                    sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                    loading='lazy'
+                    className='w-full shadow-xl dark:shadow-none'
+                  />
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
       <section className='pt-spacing-9'>
         <div className='container'>
           <div>
@@ -126,7 +151,50 @@ export default function IndexPage () {
           </div>
         </div>
       </div>
-      <section className='pt-spacing-9'>
+      <section id='testimonios'>
+        <div className='container pt-spacing-9'>
+          <div className='cols-container space-y-spacing-7 md:space-y-0'>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+                Testimonios
+              </h2>
+              <p className='f-display-2 mt-spacing-3 text-balance f-header'>
+                Lo que dicen de nosotros.
+              </p>
+            </div>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <CardStack className='w-full h-[480px]' items={testimonials} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id='preguntas-frecuentes' className='pt-spacing-9'>
+        <div className='container'>
+          <div>
+            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              {faq.label}
+            </h2>
+            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
+              Preguntas más frecuentadas por nuestros clientes.
+            </p>
+          </div>
+          <div className='mt-spacing-6'>
+            <Accordion type='single' collapsible className='w-full'>
+              {faq.items.map((faqItem, key) => (
+                <AccordionItem value={`item-${key}`} key={`item-${key}`}>
+                  <AccordionTrigger className='f-subhead-2 text-left'>
+                    {faqItem.title}
+                  </AccordionTrigger>
+                  <AccordionContent className='f-subhead-3'>
+                    {faqItem.description}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+      <section id='clientes' className='pt-spacing-9'>
         <div className='container'>
           <div>
             <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
@@ -181,23 +249,6 @@ export default function IndexPage () {
                 </NextLink>
               )
             })}
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className='container pt-spacing-9'>
-          <div className='cols-container space-y-spacing-7 md:space-y-0'>
-            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
-                Testimonios
-              </h2>
-              <p className='f-display-2 mt-spacing-3 text-balance f-header'>
-                Lo que dicen de nosotros.
-              </p>
-            </div>
-            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <CardStack className='w-full h-[480px]' items={testimonials} />
-            </div>
           </div>
         </div>
       </section>
