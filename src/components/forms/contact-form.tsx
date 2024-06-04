@@ -21,14 +21,14 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { toast } from 'sonner'
-// import ReCAPTCHA from 'react-google-recaptcha'
+import ReCAPTCHA from 'react-google-recaptcha'
 import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { type Inputs, contactEmailSchema } from '@/lib/validations/email'
 import { services } from '@/config/services'
 
-// const recaptchaSitekey = String(process.env.NEXT_PUBLIC_GRECAPTCHA)
+const recaptchaSitekey = String(process.env.NEXT_PUBLIC_GRECAPTCHA)
 
 export default function ContactForm () {
   const [isPending, startTransition] = React.useTransition()
@@ -44,14 +44,14 @@ export default function ContactForm () {
   })
 
   const formRef = React.useRef<HTMLFormElement>(null)
-  // const recaptchaRef = React.useRef<ReCAPTCHA>(null)
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null)
 
   const onSubmit = async (data: Inputs) => {
     startTransition(async () => {
-      // if (!recaptchaRef.current?.getValue()) {
-      //   toast.error('Porfavor, verifica que no eres un robot.')
-      //   return
-      // }
+      if (!recaptchaRef.current?.getValue()) {
+        toast.error('Porfavor, verifica que no eres un robot.')
+        return
+      }
 
       const response = await fetch('/api/email/contact', {
         method: 'POST',
@@ -174,12 +174,12 @@ export default function ContactForm () {
             </FormItem>
           )}
         />
-        {/* <div className='flex'>
+        <div className='flex'>
           <ReCAPTCHA
             ref={recaptchaRef}
             sitekey={recaptchaSitekey}
           />
-        </div> */}
+        </div>
         <Button
           className='[&>*]:text-primary-foreground'
           size='full'
