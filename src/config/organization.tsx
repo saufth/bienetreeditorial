@@ -1,13 +1,17 @@
+import { calculateYears } from '@/lib/utils'
 import { type CardStackItem, type NavItemExternal } from '@/types'
+
+export const birthDate = new Date(2010, 3, 20)
+export const organizationAge = calculateYears(birthDate, new Date())
 
 export const aboutUs = {
   title: 'Descubre Bienetre',
-  description: 'Estamos conformados por un equipo de gente responsable, activa, eficiente, innovadora, divertida y creativa.',
+  description: `Más de ${organizationAge} años mejorando la vida de autores en todo el mundo.`,
   label: 'Acerca de nosotros',
   items: [
     {
       title: 'Misión',
-      description: 'Sabemos cómo hacer que este negocio sea más justo para nuestros autores, por eso, buscamos facilitar el acceso al consumo y producción de la literatura y el conocimiento. Asimismo, buscamos democratizar la posibilidad de escribir un libro, vivir de ello y dejar un legado para las futuras generaciones.',
+      description: 'Democratizar la posibilidad de escribir un libro, facilitando el acceso para los autores que quieren vivir de ello y buscan dejar un legado para las futuras generaciones.',
       image: {
         src: '/images/about-us/about-us-mission.webp',
         alt: 'Especialistas en el negocio editorial discutiendo con su compañera sobre un proyecto de edición de un libro.',
@@ -17,7 +21,7 @@ export const aboutUs = {
     },
     {
       title: 'Visión',
-      description: 'Con miras a los tiempos actuales y más de 12 años de experiencia en el negocio editorial, nuestra visión es transformar el mercado a nivel mundial, innovando en la forma de crear y consumir la literatura, el arte y el conocimiento.',
+      description: 'Transformar la industria a nivel mundial, queremos mejorar la forma en la que se crea y consume literatura, arte y conocimiento, facilitando el acceso a los libros.',
       image: {
         src: '/images/about-us/about-us-vision.webp',
         alt: 'Autora administrando su agenda mientras habla por teléfono mientras usa una laptop y escribe en un cuaderno en la sala de su casa.',

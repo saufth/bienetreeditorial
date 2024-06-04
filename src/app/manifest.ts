@@ -14,15 +14,15 @@ export default function Manifest () : MetadataRoute.Manifest {
     prefer_related_applications: true,
     icons: [
       {
-        src: '/android-chrome-192x192.png',
+        src: '/android-chrome-192x192.jpg',
         sizes: '192x192',
-        type: 'image/png',
+        type: 'image/jpg',
         purpose: 'maskable'
       },
       {
-        src: '/android-chrome-512x512.png',
+        src: '/android-chrome-512x512.jpg',
         sizes: '512x512',
-        type: 'image/png'
+        type: 'image/jpg'
       }
     ]
   }

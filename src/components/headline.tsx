@@ -1,7 +1,7 @@
 import { Highlight } from '@/components/highlight'
 
-export const Headline = ({ text }: { text: string }) => {
-  const headlineData = text.split(' ')
+export const Headline = ({ children }: { children: string }) => {
+  const headlineData = children.split(' ')
 
   return (
     <h1 className='f-display-1 font-header x:leading-[150%] sm:leading-[140%] xl:leading-[140%] -tracking-tight text-right'>
@@ -9,9 +9,10 @@ export const Headline = ({ text }: { text: string }) => {
         return key < (headlineData.length - 1)
           ? `${word} `
           : (
-            <Highlight key={key}>
+            <span className='w-full block relative z-0' key={key}>
               {word}
-            </Highlight>
+              <Highlight />
+            </span>
             )
       })}
     </h1>
