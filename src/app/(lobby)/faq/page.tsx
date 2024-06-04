@@ -20,7 +20,9 @@ export default function AboutUsPage () {
     <>
       <section className='py-spacing-7'>
         <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
-          <Headline text={`${faq.title}.`} />
+          <Headline>
+            {`${faq.title}.`}
+          </Headline>
           <div className='mt-spacing-6 max-w-md lg:max-w-lg'>
             <p className='text-muted-foreground f-subhead-2 text-right text-balance'>
               {faq.description}

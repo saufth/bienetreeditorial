@@ -15,7 +15,9 @@ export default function ContactPage () {
     <>
       <section className='pt-spacing-7'>
         <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
-          <Headline text='Ponte en contacto.' />
+          <Headline>
+            Ponte en contacto.
+          </Headline>
         </div>
         <div className='container pt-spacing-9'>
           <div className='cols-container'>
