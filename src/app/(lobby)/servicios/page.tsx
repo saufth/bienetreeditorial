@@ -31,7 +31,7 @@ export default function ServicesPage () {
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Nuestros servicios
             </h2>
-            <p className='f-display-2 mt-spacing-3 text-balance f-header'>
+            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
               Queremos que los autores alcancen su objetivo.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function ServicesPage () {
                     <h3 className='f-heading-1 f-header text-balance'>
                       {serviceItem.title}
                     </h3>
-                    <p className='f-subhead-3 text-muted-foreground text-balance mt-spacing-4'>
+                    <p className='f-subhead-2 text-muted-foreground text-balance mt-spacing-4'>
                       {serviceItem.description}
                     </p>
                   </div>
