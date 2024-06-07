@@ -42,7 +42,7 @@ export default function IndexPage () {
             {`${siteConfig.slogan}.`}
           </Headline>
         </div>
-        <div className='container mt-spacing-7 relative aspect-video z-10'>
+        <div className='full-bleed-container mt-spacing-7 relative aspect-video z-10'>
           <BackgroundVideo src='/video/home-hero.mp4' />
         </div>
       </section>
@@ -75,7 +75,7 @@ export default function IndexPage () {
             <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-6-cols bg-secondary order-1 md:order-2'>
               <Image
                 src='/images/home-about-us.webp'
-                alt='La mano de una persona marcando palabras clave en un libro y apuntando al contenido en un escritorio con un monitor.'
+                alt='La mano de una persona marcando con un lapiz rojo palabras clave en un libro en un escritorio frente a una computadora.'
                 width={2750}
                 height={2750}
                 sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
