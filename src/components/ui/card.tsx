@@ -11,7 +11,7 @@ const Card = React.forwardRef<
   <Comp
     ref={ref}
     className={cn(
-      'bg-card border p-gutter',
+      'bg-card border text-card-foreground shadow-sm',
       className
     )}
     {...props}
@@ -25,7 +25,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('w-full', className)}
+    className={cn('w-full p-gutter flex flex-col space-y-spacing-3', className)}
     {...props}
   />
 ))
@@ -39,11 +39,11 @@ interface CardDataProps extends CardProps {
 
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement> & { as?: 'h1' | 'h2' | 'h3' }
->(({ className, as: Comp = 'h3', ...props }, ref) => (
-  <Comp
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
     ref={ref}
-    className={cn('text-card-foreground', className)}
+    className={cn('f-subhead-3 f-header line-clamp-2', className)}
     {...props}
   />
 ))
@@ -57,7 +57,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn('text-p1 text-card-foreground', className)}
+    className={cn('f-body-1 text-muted-foreground line-clamp-3 text-balance', className)}
     {...props}
   />
 ))

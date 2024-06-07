@@ -12,21 +12,40 @@ export const author: Author = {
   url: 'https://github.com/saufth'
 }
 
-export const siteNav: MainNavItem[] = [
+export const homeNav: MainNavItem[] = [
   {
-    title: 'Nuestros servicios',
-    href: '/servicios'
+    title: 'Publicaciones recientes',
+    href: '/#publicaciones-recientes'
   },
+  {
+    title: 'Nuestros clientes',
+    href: '/#nuestros-clientes'
+  },
+  {
+    title: 'Testimonios',
+    href: '/#testimonios'
+  },
+  {
+    title: 'Trabajo social',
+    href: '/#trabajo-social'
+  },
+  {
+    title: 'Preguntas frecuentes',
+    href: '/#preguntas-frecuentes'
+  }
+]
+
+export const siteNav: MainNavItem[] = [
   {
     title: 'Acerca de nosotros',
     href: '/nosotros'
   },
   {
-    title: 'Preguntas frecuentes',
-    href: '/faq'
+    title: 'Nuestros servicios',
+    href: '/servicios'
   },
   {
-    title: 'Ponte en contacto',
+    title: 'Trabaja con nosotros',
     href: '/contacto'
   }
 ]

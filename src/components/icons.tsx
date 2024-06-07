@@ -569,5 +569,34 @@ export const Icons = {
         <circle cx='17.5' cy='17.5' r='3.5' />
       </svg>
     )
+  },
+  Play: (props: IconProps) => {
+    return (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width={16}
+        height={16}
+        viewBox='0 0 16 16'
+        {...props}
+      >
+        <polygon points='2 2 14 8 2 14 2 2' />
+      </svg>
+    )
+  },
+  Pause: (props: IconProps) => {
+    return (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width={16}
+        height={16}
+        viewBox='0 0 16 16'
+        {...props}
+      >
+        <g>
+          <rect x='9.81' y='2' width='1.38' height='12' />
+          <rect x='4.81' y='2' width='1.38' height='12' />
+        </g>
+      </svg>
+    )
   }
 }

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutUsPage () {
   return (
     <>
-      <section className='py-spacing-7'>
+      <section className='pt-spacing-7'>
         <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
           <Headline>
             {`${aboutUs.title}.`}
@@ -35,7 +35,43 @@ export default function AboutUsPage () {
             <p className='sr-only'>{siteConfig.name}</p>
             <Icons.Logoname className='w-full xs:w-auto h-auto xs:h-24 sm:h-36 xl:h-48 mt-spacing-4' />
           </header>
-          <div className='space-y-spacing-7 mt-spacing-7'>
+          <div className='mt-spacing-6'>
+            <div className='hidden md:block bg-primary float-right ml-gutter mb-gutter'>
+              <Image
+                src='/images/home-services.webp'
+                alt='Las manos de dos personas sosteniendo un libro y apuntando al contenido en un escritorio con un monitor.'
+                width={2750}
+                height={2750}
+                sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                loading='lazy'
+                className='md:w-md lg:w-xl xl:w-2xl h-auto'
+              />
+            </div>
+            <div className='mt-spacing-6 md:mt-0 space-y-spacing-6'>
+              <aboutUs.content.description />
+              <div className='block md:hidden bg-primary'>
+                <Image
+                  src='/images/home-services.webp'
+                  alt='Las manos de dos personas sosteniendo un libro y apuntando al contenido en un escritorio con un monitor.'
+                  width={2750}
+                  height={2750}
+                  sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                  loading='lazy'
+                />
+              </div>
+              {aboutUs.content.items.map((aboutUsItem, key) => (
+                <article className='space-y-spacing-4' key={key}>
+                  <h3 className='f-heading-2 mt-spacing-3 text-balance font-header f-header'>
+                    {aboutUsItem.title}
+                  </h3>
+                  <aboutUsItem.description />
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <div className='space-y-spacing-7 mt-spacing-7'>
             {aboutUs.items.map((aboutUsItem, key) => (
               <article className='cols-container mt-spacing-3 odd:flex-row-reverse' key={key}>
                 <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-5-cols mt-spacing-6 md:mt-0 order-2'>
@@ -56,14 +92,12 @@ export default function AboutUsPage () {
                     height={aboutUsItem.image.height}
                     sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                     loading='lazy'
-                    className='w-full shadow-xl dark:shadow-none'
+                    className='w-full'
                   />
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
+          </div> */}
     </>
   )
 }

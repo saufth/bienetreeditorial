@@ -26,7 +26,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { type Inputs, contactEmailSchema } from '@/lib/validations/email'
-import { services } from '@/config/services'
+import { countries } from '@/config/countries'
 
 const recaptchaSitekey = String(process.env.NEXT_PUBLIC_GRECAPTCHA)
 
@@ -38,7 +38,8 @@ export default function ContactForm () {
     defaultValues: {
       name: '',
       email: '',
-      category: services.items[0]!.title,
+      country: countries.find((countryData) => countryData[1] === 'mx')![0],
+      phone: '',
       subject: ''
     }
   })
@@ -112,7 +113,7 @@ export default function ContactForm () {
               <FormLabel>Correo electrónico</FormLabel>
               <FormControl>
                 <Input
-                  placeholder='correo@ejemplo.com'
+                  placeholder='ej. correo@ejemplo.com'
                   {...field}
                 />
               </FormControl>
@@ -122,10 +123,27 @@ export default function ContactForm () {
         />
         <FormField
           control={form.control}
-          name='category'
+          name='phone'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Whatsapp</FormLabel>
+              <FormControl>
+                <Input
+                  className='rounded-none'
+                  placeholder='Ingresa un número de teléfono'
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='country'
           render={({ field }) => (
             <FormItem className='w-full'>
-              <FormLabel>Categoría</FormLabel>
+              <FormLabel>País</FormLabel>
               <Select
                 value={field.value}
                 onValueChange={(value: typeof field.value) =>
@@ -138,14 +156,14 @@ export default function ContactForm () {
                 </FormControl>
                 <SelectContent>
                   <SelectGroup>
-                    {services.items.map(
-                      (service) => (
+                    {countries.map(
+                      (country) => (
                         <SelectItem
-                          key={service.title}
-                          value={service.title}
+                          key={country[1]}
+                          value={country[0]}
                           className='rounded-none hover:cursor-pointer group-hover:bg-secondary'
                         >
-                          {service.title}
+                          {country[0]}
                         </SelectItem>
                       )
                     )}
@@ -161,7 +179,7 @@ export default function ContactForm () {
           name='subject'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Cuéntanos ¿Cómo podemos ayudarte?</FormLabel>
+              <FormLabel>Asunto</FormLabel>
               <FormControl>
                 <Textarea
                   className='resize-none border-none ring-ring ring-1focus-visible:ring-ring'

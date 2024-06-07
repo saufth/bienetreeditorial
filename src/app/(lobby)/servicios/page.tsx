@@ -56,7 +56,7 @@ export default function ServicesPage () {
                     height={serviceItem.image.height}
                     sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                     loading='lazy'
-                    className='w-full shadow-xl dark:shadow-none'
+                    className='w-full'
                   />
                 </div>
               </article>

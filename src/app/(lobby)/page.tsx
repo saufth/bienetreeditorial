@@ -1,53 +1,91 @@
 import Image from 'next/image'
 import NextLink from '@/components/ui/next-link'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card'
 import { CardStack } from '@/components/cards/card-stack'
 import { Headline } from '@/components/headline'
-import { Icons } from '@/components/icons'
-import { testimonials, trustedBy } from '@/config/organization'
 import { products } from '@/config/products'
-import { siteConfig } from '@/config/site'
+import { siteConfig, siteNav } from '@/config/site'
+import BackgroundVideo from '@/components/background-video'
+import CardVideo from '@/components/cards/card-video'
 import { services } from '@/config/services'
+import {
+  aboutUs,
+  socialWork,
+  testimonials,
+  trustedBy,
+  faq
+} from '@/config/organization'
 
 export default function IndexPage () {
+  const aboutUsLink = siteNav.find((nav) => nav.href === '/nosotros')!
+  const servicesLink = siteNav.find((nav) => nav.href === '/servicios')!
+
   return (
     <>
-      <section className='pt-spacing-7 pb-spacing-9'>
+      <section className='pt-spacing-7'>
         <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
           <Headline>
             {`${siteConfig.slogan}.`}
           </Headline>
-          <div className='mt-spacing-6 max-w-lg lg:max-w-xl'>
-            <p className='text-muted-foreground f-subhead-1 text-right text-balance'>
-              {siteConfig.description}
+        </div>
+        <div className='container mt-spacing-7 relative aspect-video z-10'>
+          <BackgroundVideo src='/video/home-hero.mp4' />
+        </div>
+      </section>
+      <section id='nosotros'>
+        <div className='container pt-spacing-9'>
+          <header>
+            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              {aboutUs.label}
+            </h2>
+            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
+              {aboutUs.description}
             </p>
+          </header>
+          <div className='mt-spacing-6 cols-container'>
+            <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
+              <aboutUs.content.description />
+              <Button
+                asChild
+                size='lg'
+                className='flex mt-spacing-6'
+              >
+                <NextLink
+                  href={aboutUsLink.href}
+                  className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
+                >
+                  {aboutUsLink.title}
+                </NextLink>
+              </Button>
+            </div>
+            <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-6-cols bg-secondary order-1 md:order-2'>
+              <Image
+                src='/images/home-about-us.webp'
+                alt='La mano de una persona marcando palabras clave en un libro y apuntando al contenido en un escritorio con un monitor.'
+                width={2750}
+                height={2750}
+                sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                loading='lazy'
+                className='w-full'
+              />
+            </div>
           </div>
         </div>
       </section>
-      <div className='bg-card border-y mt-spacing-7'>
-        <div className='max-w-xl md:max-w-5xl mx-auto px-gutter py-spacing-9'>
-          <Icons.Logomark className='w-12 sm:w-16 h-auto mx-auto' />
-          <p className='f-heading-1 text-muted-foreground font-light text-center x:leading-[150%] sm:leading-[160%] xl:leading-[160%] mt-spacing-7 [&>b]:border-b'>
-            <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir
-            una vida más feliz y saludable, a través de su <b>revista bimestral Bien-être</b>.
-            Durante 10 años docenas de personalidades desfilaron por sus páginas brindando
-            entrevistas exclusivas, así como sus <b>secretos para el éxito</b>.
-          </p>
-          <Button
-            asChild
-            size='lg'
-            className='flex mt-spacing-6 mx-auto'
-          >
-            <NextLink
-              href='/nosotros'
-              className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
-            >
-              Conocenos
-            </NextLink>
-          </Button>
-        </div>
-      </div>
       <section className='pt-spacing-9'>
         <div className='container'>
           <div>
@@ -90,7 +128,7 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <div>
+      <section>
         <div className='container'>
           <div className='cols-container mt-spacing-9'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols'>
@@ -107,10 +145,10 @@ export default function IndexPage () {
                   className='flex mt-spacing-6'
                 >
                   <NextLink
-                    href='/servicios'
+                    href={servicesLink.href}
                     className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
                   >
-                    Servicios
+                    {servicesLink.title}
                   </NextLink>
                 </Button>
               </div>
@@ -123,13 +161,13 @@ export default function IndexPage () {
                 height={2750}
                 sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                 loading='lazy'
-                className='w-full shadow-xl dark:shadow-none'
+                className='w-full'
               />
             </div>
           </div>
         </div>
-      </div>
-      <section className='pt-spacing-9'>
+      </section>
+      <section id='nuestros-clientes' className='pt-spacing-9'>
         <div className='container'>
           <div>
             <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
@@ -187,7 +225,7 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section>
+      <section id='testimonios'>
         <div className='container pt-spacing-9'>
           <div className='cols-container space-y-spacing-7 md:space-y-0'>
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
@@ -195,11 +233,150 @@ export default function IndexPage () {
                 Testimonios
               </h2>
               <p className='f-display-2 mt-spacing-3 text-balance f-header'>
-                Lo que dicen de nosotros.
+                Lo que opinan nuestros clientes.
               </p>
             </div>
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
               <CardStack className='w-full h-[480px]' items={testimonials} />
+            </div>
+          </div>
+          <div className='cols-container mt-gutter gap-y-gutter relative z-10'>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <CardVideo src='/video/home-about-us.mp4' />
+            </div>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <CardVideo src='/video/home-about-us.mp4' />
+            </div>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <CardVideo src='/video/home-about-us.mp4' />
+            </div>
+            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
+              <CardVideo src='/video/home-about-us.mp4' />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id='trabajo-social'>
+        <div className='container pt-spacing-9'>
+          <header>
+            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              Trabajo social
+            </h2>
+            <p className='text-muted-foreground f-subhead-1 text-balance mt-spacing-3'>
+              <span className='f-display-3 font-header f-header block pb-spacing-4'>
+                Ayudar nos mueve
+              </span>
+              <span className='sr-only'>, por eso{' '}</span>
+              Impulsamos dos iniciativas que contribuyen a la difusión de la literatura y sus beneficios
+              entre niños, jóvenes y adultos: <b>Fundación Futuros Autores del Mundo</b> y el{' '}
+              <b>Premio Manuel Salvador Gautier de Novela</b>.
+            </p>
+          </header>
+          <div className='cols-container mt-spacing-6 gap-y-gutter relative z-10'>
+            {socialWork.map((socialWorkItem, key) => (
+              <div className='w-6-cols xs:w-3-cols md:w-4-cols lg:w-3-cols' key={key}>
+                <NextLink
+                  href={socialWorkItem.url}
+                  target='_blank'
+                  rel='noreferrer nooponer'
+                >
+                  <Card as='article'>
+                    <CardContent>
+                      <Image
+                        src={socialWorkItem.image.src}
+                        alt={socialWorkItem.image.alt}
+                        width={socialWorkItem.image.width}
+                        height={socialWorkItem.image.height}
+                      />
+                    </CardContent>
+                    <CardHeader>
+                      <CardTitle title={socialWorkItem.title}>
+                        {socialWorkItem.title}
+                      </CardTitle>
+                      <CardDescription title={socialWorkItem.description}>
+                        {socialWorkItem.description}
+                      </CardDescription>
+                      <div className='pt-spacing-3'>
+                        <div className='f-body-1 font-semibold hover:underline'>
+                          Ver articulo
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </NextLink>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id='preguntas-frecuentes' className='pt-spacing-9'>
+        <div className='container'>
+          <div>
+            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              {faq.title}
+            </h2>
+            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
+              {faq.description}
+            </p>
+          </div>
+          <div className='mt-spacing-6'>
+            <Accordion type='single' collapsible className='w-full'>
+              {faq.items.map((faqItem, key) => (
+                <AccordionItem value={`item-${key}`} key={`item-${key}`}>
+                  <AccordionTrigger className='f-subhead-2 text-left'>
+                    {faqItem.title}
+                  </AccordionTrigger>
+                  <AccordionContent className='f-subhead-3'>
+                    {faqItem.description}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+      <section id='nosotros'>
+        <div className='container pt-spacing-9'>
+          <div>
+            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              Revista Bien-être
+            </h2>
+            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
+              Disfruta gratuitamente de nuestra revista.
+            </p>
+          </div>
+          <div className='mt-spacing-6 cols-container'>
+            <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
+              <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
+                Descubre secretos de salud y bienestar físico, emocional y espiritual en cada uno
+                de los números especializados de nuestra publicación <b>Bien-être</b>, así como{' '}
+                <b>entrevistas exclusivas</b> a <b>personalidades de renombre internacional</b>.
+              </p>
+              <Button
+                asChild
+                size='lg'
+                className='flex mt-spacing-6'
+              >
+                <NextLink
+                  href='https://issuu.com/bienetremedia'
+                  target='_blank'
+                  rel='noreferrer nooponer'
+                  className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
+                >
+                  Ver revista Bien-être
+                </NextLink>
+              </Button>
+            </div>
+            <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-6-cols bg-secondary order-1 md:order-2'>
+              <Image
+                src='/images/home-bienetre-magazine.webp'
+                alt='Portadas de revistas Bien-être.'
+                width={1000}
+                height={1000}
+                sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                loading='lazy'
+                className='w-full'
+              />
             </div>
           </div>
         </div>

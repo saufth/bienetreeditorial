@@ -1,6 +1,10 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { siteConfig } from '@/config/site'
+import {
+  type DocumentElementWithFullscreen,
+  type DocumentWithFullscreen
+} from '@/types'
 
 export function cn (...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -39,4 +43,44 @@ export function calculateYears (dateA: Date, dateB: Date) {
   if (dateDiff < 0) month -= 1
   if (month < 0) years -= 1
   return years
+}
+
+export function requestFullScreen (element: DocumentElementWithFullscreen) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen()
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen()
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen()
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen()
+  }
+}
+
+export function isFullScreen (): boolean {
+  const doc = document as DocumentWithFullscreen
+  return !!(doc.fullscreenElement ||
+      doc.mozFullScreenElement ||
+      doc.webkitFullscreenElement ||
+      doc.msFullscreenElement)
+}
+
+export function exitFullScreen (doc: DocumentWithFullscreen) {
+  if (doc.exitFullscreen) {
+    doc.exitFullscreen()
+  } else if (doc.msExitFullscreen) {
+    doc.msExitFullscreen()
+  } else if (doc.webkitExitFullscreen) {
+    doc.webkitExitFullscreen()
+  } else if (doc.mozCancelFullScreen) {
+    doc.mozCancelFullScreen()
+  }
+}
+
+export function toogleFullScreen (): void {
+  if (isFullScreen()) {
+    requestFullScreen(document.documentElement)
+  } else {
+    exitFullScreen(document)
+  }
 }

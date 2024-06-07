@@ -6,7 +6,7 @@ import { Icons } from '@/components/icons'
 import { ModeToggle } from '@/components/layouts/mode-toggle'
 import Menu from '@/components/layouts/menu'
 import NextLink from '@/components/ui/next-link'
-import { siteConfig } from '@/config/site'
+import { siteConfig, siteNav } from '@/config/site'
 
 export default function SiteHeader () {
   const { scrollYProgress } = useScroll()
@@ -21,7 +21,7 @@ export default function SiteHeader () {
     if (typeof current === 'number') {
       const direction = current - scrollYProgress.getPrevious()!
 
-      if (scrollYProgress.get() < 0.05) {
+      if (scrollYProgress.get() < 0.03) {
         setVisible(true)
         setIsOnTop(true)
       } else {
@@ -32,6 +32,8 @@ export default function SiteHeader () {
       }
     }
   })
+
+  const contactLink = siteNav.find((nav) => nav.href === '/contacto')!
 
   return (
     <>
@@ -46,7 +48,7 @@ export default function SiteHeader () {
         }}
         transition={{
           duration: 0.5,
-          delay: 0.25
+          delay: 0.1
         }}
         className='w-full sticky top-0 left-0 z-40 bg-background/80 backdrop-saturate-150 backdrop-blur-lg border-b'
       >
@@ -64,11 +66,11 @@ export default function SiteHeader () {
               <div className='flex items-center gap-x-6'>
                 <Button asChild size='lg' className='hidden sm:flex'>
                   <NextLink
-                    href='/contacto'
+                    href={contactLink.href}
                     onClick={closeMenu}
                     className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
                   >
-                    Contacto
+                    Contáctanos
                   </NextLink>
                 </Button>
                 <ModeToggle />

@@ -1,35 +1,70 @@
-import { calculateYears } from '@/lib/utils'
+import NextLink from '@/components/ui/next-link'
 import { type CardStackItem, type NavItemExternal } from '@/types'
 
-export const birthDate = new Date(2010, 3, 20)
-export const organizationAge = calculateYears(birthDate, new Date())
+export const organizationFounder = 'Keila González Báez'
 
 export const aboutUs = {
-  title: 'Descubre Bienetre',
-  description: `Más de ${organizationAge} años mejorando la vida de autores en todo el mundo.`,
   label: 'Acerca de nosotros',
-  items: [
-    {
-      title: 'Misión',
-      description: 'Democratizar la posibilidad de escribir un libro, facilitando el acceso para los autores que quieren vivir de ello y buscan dejar un legado para las futuras generaciones.',
-      image: {
-        src: '/images/about-us/about-us-mission.webp',
-        alt: 'Especialistas en el negocio editorial discutiendo con su compañera sobre un proyecto de edición de un libro.',
-        width: 2840,
-        height: 2840
+  title: 'Descubre Bienetre',
+  description: 'Conoce nuestro origen y cómo podemos ayudarte a ganar.',
+  content: {
+    description: () => (
+      <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
+        <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz y saludable,
+        a través de su <b>revista bimestral Bien-être</b>. Durante 10 años docenas de personalidades desfilaron por sus páginas
+        brindando entrevistas exclusivas, así como sus secretos para el éxito.{' '}
+        <NextLink href='https://www.isabelallende.com/' target='_blank' rel='nooponer noreferrer'><b>Isabel Allende</b></NextLink>,{' '}
+        <NextLink href='https://juliobevione.com/' target='_blank' rel='nooponer noreferrer'><b>Julio Bevione</b></NextLink>,{' '}
+        <NextLink href='https://gloriaestefan.com/' target='_blank' rel='nooponer noreferrer'><b>Gloria Estefan</b></NextLink>,{' '}
+        <NextLink href='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' target='_blank' rel='nooponer noreferrer'><b>Rigoberta Menchú</b></NextLink>{' '}
+        son solo algunas de ellas.
+      </p>
+    ),
+    items: [
+      {
+        title: 'Reinvención',
+        description: () => (
+          <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+            A mediados de esa década, su fundadora <b>{organizationFounder}</b> decide publicar
+            su primer libro y con ese nacimiento llegó un gran interés por parte de la audiencia
+            expresando su deseo de publicar. Es allí donde decide abrir una nueva línea de
+            negocios para ofrecer a las personas la posibilidad de <b>publicar sus libros</b>{' '}
+            con la <b>calidad y el rigor</b> que amerita dicho trabajo.
+          </p>
+        )
+      },
+      {
+        title: 'Resultados',
+        description: () => (
+          <>
+            <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+              Hasta la fecha alrededor de 300 personas se han convertido en autores gracias a su método
+              de escritura llamado <b>A90D</b> o, a través de los <b>servicios de edición y publicación</b> que
+              brindamos en la editorial de la mano de nuestro equipo: gente responsable, profesional,
+              organizada, eficiente, innovadora y creativa.
+            </p>
+            <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+              Un gran porcentaje de nuestros autores han alcanzado el rango de <b>best sellers en Amazon</b> con
+              sus libros; estrategia en la que la editorial <b>Bienetre</b> se especializa.
+            </p>
+          </>
+        )
+      },
+      {
+        title: 'Porqué podemos ayudarte',
+        description: () => (
+          <>
+            <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+              Así pues, el camino como escritora recorrido por nuestra CEO <b>{organizationFounder}</b>,
+              nuestra <b>experiencia de 14 años</b> en el mundo de la edición, así como nuestra{' '}
+              <b>maestría en los secretos de Amazon</b>, son tu pase dorado para elevarte al
+              siguiente nivel de autoridad en tu vida y carrera. <b>¡Trabajemos juntos y hagámoslo posible!</b>
+            </p>
+          </>
+        )
       }
-    },
-    {
-      title: 'Visión',
-      description: 'Transformar la industria a nivel mundial, queremos mejorar la forma en la que se crea y consume literatura, arte y conocimiento, facilitando el acceso a los libros.',
-      image: {
-        src: '/images/about-us/about-us-vision.webp',
-        alt: 'Autora administrando su agenda mientras habla por teléfono mientras usa una laptop y escribe en un cuaderno en la sala de su casa.',
-        width: 2840,
-        height: 2840
-      }
-    }
-  ]
+    ]
+  }
 }
 
 export const testimonials: CardStackItem[] = [
@@ -160,9 +195,8 @@ export const trustedBy: NavItemExternal[] = [
 ]
 
 export const faq = {
-  title: 'Aclaramos tus dudas',
-  description: 'Somos transparentes en todos nuestros procesos.',
-  label: 'Preguntas frecuentes',
+  title: 'Preguntas frecuentes',
+  description: 'No te quedes con dudas.',
   items: [
     {
       title: '¿Corrigen las faltas ortográficas y mejoran el texto para que sea más entendible?',
@@ -202,3 +236,50 @@ export const faq = {
     }
   ]
 }
+
+export const socialWork = [
+  {
+    title: 'Editorial Bienetre pone a circular poemario maya-español escrito por niños y niñas',
+    description: 'Trece niños y niñas mexicanos de edades entre 8 y 11 años, se conviertieron en autores gracias a A90D Impulsa: una iniciativa promovida por la editorial dominicana Bienetre.',
+    url: 'https://elnuevodiario.com.do/editorial-bienetre-pone-a-circular-poemario-maya-espanol-escrito-por-ninos-y-ninas/',
+    image: {
+      src: '/images/social-work/social-work-00.webp',
+      alt: 'Editorial Bienetre pone a circular poemario maya-español escrito por niños y niñas',
+      width: 512,
+      height: 512
+    }
+  },
+  {
+    title: 'Realizarán primera entrega del Premio Manuel Salvador Gautier de Novela 2022',
+    description: 'El Ateneo Insular y Bienetre Editorial se complacen en anunciar la primera entrega del Premio Literario Manuel Salvador Gautier de Novela, patrocinado oficialmente por Banreservas.',
+    url: 'https://www.diariolibre.com/revista/cultura/2023/01/23/entregaran-premio-manuel-salvador-gautier-de-novela-2022/2204788',
+    image: {
+      src: '/images/social-work/social-work-01.webp',
+      alt: 'Realizarán primera entrega del Premio Manuel Salvador Gautier de Novela 2022',
+      width: 512,
+      height: 512
+    }
+  },
+  {
+    title: 'Fundación dona libros escritos por niños para niños',
+    description: 'Niños de entre 6 y 10 años de edad fueron los protagonistas del lanzamiento de la 4ta edición del libro de cuentos escrito por niños para niños, en el Colegio de los periodistas de Santiago.',
+    url: 'https://listindiario.com/ventana/20230621/fundacion-dona-libros-escritos-ninos-ninos_759826.html',
+    image: {
+      src: '/images/social-work/social-work-02.webp',
+      alt: 'Fundación dona libros escritos por niños para niños',
+      width: 512,
+      height: 512
+    }
+  },
+  {
+    title: 'Víctor Xavier Ureña gana el Premio Manuel Salvador Gautier de Novela 2023 con Un futuro prometedor',
+    description: 'La Editorial Bienetre y el Ateneo Insular, liderados por Keila González Báez y el Dr. Bruno Rosario Candelier respectivamente, se enorgullecen de anunciar a Víctor Xavier Ureña como el laureado de la segunda edición del Premio Manuel Salvador Gautier de Novela 2023 por su obra «Un Futuro Prometedor».',
+    url: 'https://diariosocialrd.com/victor-xavier-urena-gana-el-premio-manuel-salvador-gautier-de-novela-2023-con-un-futuro-prometedor/',
+    image: {
+      src: '/images/social-work/social-work-03.webp',
+      alt: 'Víctor Xavier Ureña gana el Premio Manuel Salvador Gautier de Novela 2023 con Un futuro prometedor',
+      width: 512,
+      height: 512
+    }
+  }
+]
