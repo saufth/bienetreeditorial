@@ -27,7 +27,8 @@ import {
   socialWork,
   testimonials,
   trustedBy,
-  faq
+  faq,
+  founder
 } from '@/config/organization'
 
 export default function IndexPage () {
@@ -44,6 +45,18 @@ export default function IndexPage () {
         </div>
         <div className='full-bleed-container mt-spacing-7 relative aspect-video z-10'>
           <BackgroundVideo src='/video/home-hero.mp4' />
+        </div>
+        <div className='f-subhead-3 container pt-gutter'>
+          Autora:{' '}
+          <NextLink
+            href={founder.url}
+            target='_blank'
+            rel='nooponer noreferrer'
+          >
+            <b>
+              {founder.name}
+            </b>
+          </NextLink>
         </div>
       </section>
       <section id='nosotros'>

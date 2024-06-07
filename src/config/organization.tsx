@@ -1,7 +1,27 @@
 import NextLink from '@/components/ui/next-link'
+import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 import { type CardStackItem, type NavItemExternal } from '@/types'
 
-export const organizationFounder = 'Keila González Báez'
+const LinkAuthor = ({ name, url }: Required<Author>) => {
+  const href = typeof url === 'string' ? url : url.href
+
+  return (
+    <NextLink
+      href={href}
+      target='_blank'
+      rel='nooponer noreferrer'
+    >
+      <b>
+        {name}
+      </b>
+    </NextLink>
+  )
+}
+
+export const founder: Required<Author> = {
+  name: 'Keila González Báez',
+  url: 'https://www.keilagonzalezbaez.com/'
+}
 
 export const aboutUs = {
   label: 'Acerca de nosotros',
@@ -13,10 +33,10 @@ export const aboutUs = {
         <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz y saludable,
         a través de su <b>revista bimestral Bien-être</b>. Durante 10 años docenas de personalidades desfilaron por sus páginas
         brindando entrevistas exclusivas, así como sus secretos para el éxito.{' '}
-        <NextLink href='https://www.isabelallende.com/' target='_blank' rel='nooponer noreferrer'><b>Isabel Allende</b></NextLink>,{' '}
-        <NextLink href='https://juliobevione.com/' target='_blank' rel='nooponer noreferrer'><b>Julio Bevione</b></NextLink>,{' '}
-        <NextLink href='https://gloriaestefan.com/' target='_blank' rel='nooponer noreferrer'><b>Gloria Estefan</b></NextLink>,{' '}
-        <NextLink href='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' target='_blank' rel='nooponer noreferrer'><b>Rigoberta Menchú</b></NextLink>{' '}
+        <LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' />,{' '}
+        <LinkAuthor url='https://juliobevione.com/' name='Julio Bevione' />,{' '}
+        <LinkAuthor url='https://gloriaestefan.com/' name='Gloria Estefan' />,{' '}
+        <LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú' />{' '}
         son solo algunas de ellas.
       </p>
     ),
@@ -25,7 +45,7 @@ export const aboutUs = {
         title: 'Reinvención',
         description: () => (
           <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
-            A mediados de esa década, su fundadora <b>{organizationFounder}</b> decide publicar
+            A mediados de esa década, su fundadora <LinkAuthor {...founder} /> decide publicar
             su primer libro y con ese nacimiento llegó un gran interés por parte de la audiencia
             expresando su deseo de publicar. Es allí donde decide abrir una nueva línea de
             negocios para ofrecer a las personas la posibilidad de <b>publicar sus libros</b>{' '}
@@ -55,7 +75,7 @@ export const aboutUs = {
         description: () => (
           <>
             <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
-              Así pues, el camino como escritora recorrido por nuestra CEO <b>{organizationFounder}</b>,
+              Así pues, el camino como escritora recorrido por nuestra CEO <LinkAuthor {...founder} />,
               nuestra <b>experiencia de 14 años</b> en el mundo de la edición, así como nuestra{' '}
               <b>maestría en los secretos de Amazon</b>, son tu pase dorado para elevarte al
               siguiente nivel de autoridad en tu vida y carrera. <b>¡Trabajemos juntos y hagámoslo posible!</b>
