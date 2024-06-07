@@ -30,7 +30,7 @@ export default function ContactPage () {
           </div>
           <div className='mt-spacing-6 space-y-spacing-4'>
             <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
-              Solicita ahora un presupuesto y recibe GRATIS nuestro e-book{' '}
+              Solicita ahora un presupuesto y recibe <b>gratis</b> nuestro e-book{' '}
               <b>"5 pasos indispensables para entregar tu borrador a la editorial y verte profesional"</b>.
             </p>
             <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
