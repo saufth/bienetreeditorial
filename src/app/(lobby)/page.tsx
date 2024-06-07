@@ -49,10 +49,10 @@ export default function IndexPage () {
       <section id='nosotros'>
         <div className='container pt-spacing-9'>
           <header>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               {aboutUs.label}
             </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
+            <p className='f-display-3 xs:f-display-2 mt-spacing-3 text-balance font-header f-header'>
               {aboutUs.description}
             </p>
           </header>
@@ -89,10 +89,10 @@ export default function IndexPage () {
       <section className='pt-spacing-9'>
         <div className='container'>
           <div>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Publicaciones recientes
             </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
+            <p className='f-display-2 mt-spacing-3 text-balance font-header f-header'>
               Autores que publicaron con nosotros recientemente.
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function IndexPage () {
           <div className='cols-container mt-spacing-9'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols'>
               <div className='sm:max-w-lg sm:pt-spacing-6 lg:pt-spacing-7'>
-                <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+                <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
                   {services.label}
                 </h2>
                 <p className='f-display-2 mt-spacing-3 text-balance f-header'>
@@ -170,10 +170,10 @@ export default function IndexPage () {
       <section id='nuestros-clientes' className='pt-spacing-9'>
         <div className='container'>
           <div>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Nuestros clientes
             </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
+            <p className='f-display-2 mt-spacing-3 text-balance f-header'>
               Ellos confiaron en nosotros.
             </p>
           </div>
@@ -229,7 +229,7 @@ export default function IndexPage () {
         <div className='container pt-spacing-9'>
           <div className='cols-container space-y-spacing-7 md:space-y-0'>
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+              <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
                 Testimonios
               </h2>
               <p className='f-display-2 mt-spacing-3 text-balance f-header'>

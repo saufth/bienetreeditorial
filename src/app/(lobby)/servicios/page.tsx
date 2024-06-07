@@ -28,10 +28,10 @@ export default function ServicesPage () {
       <section className='pt-spacing-9'>
         <div className='container'>
           <div>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Nuestros servicios
             </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
+            <p className='f-display-2 mt-spacing-3 text-balance f-header'>
               Queremos que los autores alcancen su objetivo.
             </p>
           </div>
@@ -40,10 +40,10 @@ export default function ServicesPage () {
               <article className='cols-container mt-spacing-3 odd:flex-row-reverse' key={key}>
                 <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-5-cols mt-spacing-6 md:mt-0 order-2'>
                   <div className='sm:max-w-lg md:pt-spacing-6 lg:pt-spacing-7'>
-                    <h3 className='f-heading-2 f-header'>
+                    <h3 className='f-heading-1 f-header text-balance'>
                       {serviceItem.title}
                     </h3>
-                    <p className='f-subhead-2 text-muted-foreground mt-spacing-5'>
+                    <p className='f-subhead-2 text-muted-foreground text-balance mt-spacing-4'>
                       {serviceItem.description}
                     </p>
                   </div>

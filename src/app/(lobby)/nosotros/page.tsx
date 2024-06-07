@@ -29,7 +29,7 @@ export default function AboutUsPage () {
       <section>
         <div className='container pt-spacing-9'>
           <header>
-            <h2 className='f-subhead-3 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               {aboutUs.label}
             </h2>
             <p className='sr-only'>{siteConfig.name}</p>
