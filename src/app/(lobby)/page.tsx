@@ -53,7 +53,7 @@ export default function IndexPage () {
             target='_blank'
             rel='nooponer noreferrer'
           >
-            <b>
+            <b className='border-b'>
               {founder.name}
             </b>
           </NextLink>
@@ -105,7 +105,7 @@ export default function IndexPage () {
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Publicaciones recientes
             </h2>
-            <p className='f-display-2 mt-spacing-3 text-balance font-header f-header'>
+            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
               Autores que publicaron con nosotros recientemente.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function IndexPage () {
                 <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
                   {services.label}
                 </h2>
-                <p className='f-display-2 mt-spacing-3 text-balance f-header'>
+                <p className='f-display-3 mt-spacing-3 text-balance f-header'>
                   {services.title}.
                 </p>
                 <Button
@@ -186,7 +186,7 @@ export default function IndexPage () {
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Nuestros clientes
             </h2>
-            <p className='f-display-2 mt-spacing-3 text-balance f-header'>
+            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
               Ellos confiaron en nosotros.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function IndexPage () {
               <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
                 Testimonios
               </h2>
-              <p className='f-display-2 mt-spacing-3 text-balance f-header'>
+              <p className='f-display-3 mt-spacing-3 text-balance f-header'>
                 Lo que opinan nuestros clientes.
               </p>
             </div>
@@ -329,7 +329,7 @@ export default function IndexPage () {
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               {faq.title}
             </h2>
-            <p className='f-display-2 mt-spacing-3 text-balance f-header'>
+            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
               {faq.description}
             </p>
           </div>
@@ -355,7 +355,7 @@ export default function IndexPage () {
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Revista Bien-être
             </h2>
-            <p className='f-display-2 mt-spacing-3 text-balance font-header f-header'>
+            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
               Disfruta gratuitamente de nuestra revista.
             </p>
           </div>

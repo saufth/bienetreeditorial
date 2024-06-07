@@ -24,7 +24,7 @@ export default function ContactPage () {
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Ponte en contacto
             </h2>
-            <p className='f-display-2 mt-spacing-3 text-balance font-header f-header'>
+            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
               Solicita un presupuesto.
             </p>
           </div>

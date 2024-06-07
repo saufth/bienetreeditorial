@@ -43,7 +43,7 @@ export default function ServicesPage () {
                     <h3 className='f-heading-1 f-header text-balance'>
                       {serviceItem.title}
                     </h3>
-                    <p className='f-subhead-2 text-muted-foreground text-balance mt-spacing-4'>
+                    <p className='f-subhead-3 text-muted-foreground text-balance mt-spacing-4'>
                       {serviceItem.description}
                     </p>
                   </div>
