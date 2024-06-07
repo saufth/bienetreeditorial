@@ -70,7 +70,7 @@ export default function SiteHeader () {
                     onClick={closeMenu}
                     className='pt-px lg:pt-0 font-primary uppercase lg:font-medium text-xs lg:text-sm tracking-wider'
                   >
-                    Contáctanos
+                    Contacto
                   </NextLink>
                 </Button>
                 <ModeToggle />
