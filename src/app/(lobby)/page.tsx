@@ -277,7 +277,7 @@ export default function IndexPage () {
                 Ayudar nos mueve.
               </span>
               <span className='sr-only'>, por eso{' '}</span>
-              Impulsamos dos iniciativas que contribuyen a la difusión de la literatura y sus beneficios
+              Impulsamos dos iniciativas que contribuyen a la <b>difusión de la literatura y sus beneficios</b>{' '}
               entre niños, jóvenes y adultos: <b>Fundación Futuros Autores del Mundo</b> y el{' '}
               <b>Premio Manuel Salvador Gautier de Novela</b>.
             </p>

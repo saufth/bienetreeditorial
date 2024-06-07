@@ -28,8 +28,8 @@ export const aboutUs = {
         {' '}<LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' />,
         {' '}<LinkAuthor url='https://juliobevione.com/' name='Julio Bevione' />,
         {' '}<LinkAuthor url='https://gloriaestefan.com/' name='Gloria Estefan' />,
-        {' '}<LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú' />
-        {' '}son solo algunas de ellas.
+        {' '}<LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú' />{' '}
+        son solo algunas de ellas.
       </p>
     ),
     items: [
