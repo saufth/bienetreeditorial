@@ -54,7 +54,7 @@ export default function Menu ({ action, muted }: MenuProps) {
         >
           {contactEmail}
         </Link>
-        <SocialNav items={socialNav} action={action} />
+        <SocialNav items={socialNav} action={action} muted />
       </div>
       <nav
         className='w-6-cols sm:w-3-cols lg:w-3-cols order-1 sm:order-2'
