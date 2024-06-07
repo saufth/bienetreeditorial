@@ -22,14 +22,14 @@ export const aboutUs = {
   content: {
     description: () => (
       <p className='text-muted-foreground f-subhead-1 text-balance'>
-        <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz y saludable,
-        a través de su revista bimestral <LinkAuthor {...magazine} />. Durante 10 años docenas de personalidades desfilaron por sus páginas
-        brindando entrevistas exclusivas, así como sus secretos para el éxito.{' '}
-        <LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' />,{' '}
-        <LinkAuthor url='https://juliobevione.com/' name='Julio Bevione' />,{' '}
-        <LinkAuthor url='https://gloriaestefan.com/' name='Gloria Estefan' />,{' '}
-        <LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú' />{' '}
-        son solo algunas de ellas.
+        <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz
+        y saludable, a través de su revista bimestral <LinkAuthor {...magazine} />. Durante más de 10 años docenas de
+        personalidades han desfilado por sus páginas brindando entrevistas exclusivas, así como sus secretos para el éxito.
+        {' '}<LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' />,
+        {' '}<LinkAuthor url='https://juliobevione.com/' name='Julio Bevione' />,
+        {' '}<LinkAuthor url='https://gloriaestefan.com/' name='Gloria Estefan' />,
+        {' '}<LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú' />
+        {' '}son solo algunas de ellas.
       </p>
     ),
     items: [

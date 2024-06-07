@@ -14,7 +14,7 @@ export const LinkAuthor = ({ name, url, className }: LinkAuthorProps) => {
       href={href}
       target='_blank'
       rel='nooponer noreferrer'
-      className={cn('border-b', className)}
+      className={cn('border-b hover:border-primary', className)}
     >
       <b>
         {name}

@@ -290,7 +290,7 @@ export default function IndexPage () {
                   target='_blank'
                   rel='noreferrer nooponer'
                 >
-                  <Card as='article'>
+                  <Card as='article' className='group'>
                     <CardContent>
                       <Image
                         src={socialWorkItem.image.src}
@@ -307,7 +307,7 @@ export default function IndexPage () {
                         {socialWorkItem.description}
                       </CardDescription>
                       <div className='pt-spacing-4'>
-                        <div className='f-subhead-3 font-semibold hover:underline flex items-center gap-x-2'>
+                        <div className='f-subhead-3 font-semibold group-hover:underline flex items-center gap-x-2'>
                           Ver articulo
                           <ArrowRightIcon />
                         </div>
