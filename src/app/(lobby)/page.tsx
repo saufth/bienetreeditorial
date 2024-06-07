@@ -362,7 +362,7 @@ export default function IndexPage () {
           <div className='mt-spacing-6 cols-container'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
               <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
-                Descubre secretos de salud y bienestar físico, emocional y espiritual en cada uno
+                <b>Descubre secretos</b> de salud y bienestar físico, emocional y espiritual en cada uno
                 de los números especializados de nuestra publicación <b>Bien-être</b>, así como{' '}
                 <b>entrevistas exclusivas</b> a <b>personalidades de renombre internacional</b>.
               </p>
