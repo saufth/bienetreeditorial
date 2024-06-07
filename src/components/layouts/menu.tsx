@@ -1,7 +1,7 @@
 import SocialNav from '@/components/layouts/social-nav'
 import { Link } from '@/components/ui/link'
 import { Icons } from '@/components/icons'
-import { formatPhoneNumber, whatsappUrl } from '@/lib/utils'
+import { cn, formatPhoneNumber, whatsappUrl } from '@/lib/utils'
 import {
   siteConfig,
   contactEmail,
@@ -10,7 +10,12 @@ import {
   address
 } from '@/config/site'
 
-export default function Menu ({ action }: { action?: () => void }) {
+export interface MenuProps {
+  action?: () => void
+  muted?: boolean
+}
+
+export default function Menu ({ action, muted }: MenuProps) {
   return (
     <div className='cols-container gap-y-spacing-6'>
       <div className='w-6-cols sm:w-5-cols lg:w-9-cols flex flex-col gap-y-spacing-4 order-2 sm:order-1'>
@@ -21,10 +26,10 @@ export default function Menu ({ action }: { action?: () => void }) {
           target='_blank'
           size='xl'
           rel='noreferrer'
-          className='w-fit flex gap-x-2 items-center'
+          className={cn('w-fit flex gap-x-2 items-center', muted && 'text-card-foreground')}
         >
-          <Icons.WhatsappOutlined className='w-auto h-6 lg:h-8' />
-          <span className='sr-only'>Teléfono de emergencias{' '}</span>
+          <Icons.WhatsappOutlined className={cn('w-auto h-6 lg:h-8', muted && 'stroke-card-foreground')} />
+          <span className='sr-only'>Whatsapp{' '}</span>
           {formatPhoneNumber(contactPhone)}
         </Link>
         <Link
@@ -34,7 +39,7 @@ export default function Menu ({ action }: { action?: () => void }) {
           target='_blank'
           size='xl'
           rel='noreferrer'
-          className='w-fit text-balance'
+          className={cn('w-fit text-balance', muted && 'text-card-foreground')}
         >
           {address.name}
         </Link>
@@ -45,7 +50,7 @@ export default function Menu ({ action }: { action?: () => void }) {
           target='_blank'
           rel='noreferrer'
           size='xl'
-          className='w-fit'
+          className={cn('w-fit', muted && 'text-card-foreground')}
         >
           {contactEmail}
         </Link>
@@ -67,7 +72,7 @@ export default function Menu ({ action }: { action?: () => void }) {
                     href={navItem.href}
                     onClick={action}
                     aria-label={navItem.title}
-                    className='text-lg sm:text-xl font-bold'
+                    className={cn('text-lg sm:text-xl font-bold', muted && 'text-card-foreground')}
                   >
                     {navItem.title}
                   </Link>

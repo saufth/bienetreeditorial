@@ -1,30 +1,30 @@
 import NextLink from '@/components/ui/next-link'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
 import { Icons } from '@/components/icons'
-import { capitalize } from '@/lib/utils'
-import { type Nav } from '@/types'
+import { capitalize, cn } from '@/lib/utils'
 import { siteConfig } from '@/config/site'
+import { type Nav } from '@/types'
 
 export const socialIcons = [
   {
     title: 'facebook',
-    Icon: () => <Icons.Facebook className='w-auto h-10' />
+    Icon: ({ muted }: { muted?: boolean}) => <Icons.Facebook className={cn('w-auto h-10', muted && 'text-card-foreground')} />
   },
   {
     title: 'instagram',
-    Icon: () => <Icons.Instagram className='w-auto h-10' />
+    Icon: ({ muted }: { muted?: boolean}) => <Icons.Instagram className={cn('w-auto h-10', muted && 'text-card-foreground')} />
   },
   {
     title: 'tiktok',
-    Icon: () => <Icons.Tiktok className='w-auto h-10' />
+    Icon: ({ muted }: { muted?: boolean}) => <Icons.Tiktok className={cn('w-auto h-10', muted && 'text-card-foreground')} />
   },
   {
     title: 'twitter',
-    Icon: () => <Icons.Twitter className='w-auto h-8' />
+    Icon: ({ muted }: { muted?: boolean}) => <Icons.Twitter className={cn('w-auto h-8', muted && 'text-card-foreground')} />
   },
   {
     title: 'linkedin',
-    Icon: () => <Icons.Linkedin className='w-auto h-10' />
+    Icon: ({ muted }: { muted?: boolean}) => <Icons.Linkedin className={cn('w-auto h-10', muted && 'text-card-foreground')} />
   },
   {
     title: 'whatsapp',
@@ -34,9 +34,10 @@ export const socialIcons = [
 
 interface SocialNavProps extends Nav {
   action?: () => void
+  muted?: boolean
 }
 
-const SocialNav = ({ items, action }: SocialNavProps) => {
+const SocialNav = ({ items, action, muted }: SocialNavProps) => {
   return (
     <ul className='flex gap-x-3 items-center'>
       {items.map((socialItem, key) => {
@@ -53,8 +54,8 @@ const SocialNav = ({ items, action }: SocialNavProps) => {
               rel='nooponer noreferrer'
             >
               {socialIcon
-                ? <socialIcon.Icon />
-                : <ArrowRightIcon className='w-7 h-7' />}
+                ? <socialIcon.Icon muted />
+                : <ArrowRightIcon className={cn('w-7 h-7', muted && 'text-card-foreground')} />}
               <span className='sr-only'>{socialTitle}</span>
             </NextLink>
           </li>
