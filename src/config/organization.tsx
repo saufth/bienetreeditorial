@@ -16,7 +16,7 @@ export const aboutUs = {
   description: 'Conoce nuestro origen y cómo podemos ayudarte a ganar.',
   content: {
     description: () => (
-      <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
+      <p className='text-muted-foreground f-subhead-1 text-balance'>
         <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz y saludable,
         a través de su <b>revista bimestral Bien-être</b>. Durante 10 años docenas de personalidades desfilaron por sus páginas
         brindando entrevistas exclusivas, así como sus secretos para el éxito.{' '}
@@ -31,7 +31,7 @@ export const aboutUs = {
       {
         title: 'Reinvención',
         description: () => (
-          <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+          <p className='text-muted-foreground f-subhead-2 text-balance'>
             A mediados de esa década, su fundadora <LinkAuthor {...founder} /> decide publicar
             su primer libro y con ese nacimiento llegó un gran interés por parte de la audiencia
             expresando su deseo de publicar. Es allí donde decide abrir una nueva línea de
@@ -44,13 +44,13 @@ export const aboutUs = {
         title: 'Resultados',
         description: () => (
           <>
-            <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+            <p className='text-muted-foreground f-subhead-2 text-balance'>
               Hasta la fecha alrededor de 300 personas se han convertido en autores gracias a su método
               de escritura llamado <b>A90D</b> o, a través de los <b>servicios de edición y publicación</b> que
               brindamos en la editorial de la mano de nuestro equipo: gente responsable, profesional,
               organizada, eficiente, innovadora y creativa.
             </p>
-            <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+            <p className='text-muted-foreground f-subhead-2 text-balance'>
               Un gran porcentaje de nuestros autores han alcanzado el rango de <b>best sellers en Amazon</b> con
               sus libros; estrategia en la que la editorial <b>Bienetre</b> se especializa.
             </p>
@@ -61,7 +61,7 @@ export const aboutUs = {
         title: 'Porqué podemos ayudarte',
         description: () => (
           <>
-            <p className='text-muted-foreground f-subhead-2 text-balance [&>a]:border-b'>
+            <p className='text-muted-foreground f-subhead-2 text-balance'>
               Así pues, el camino como escritora recorrido por nuestra CEO <LinkAuthor {...founder} />,
               nuestra <b>experiencia de 14 años</b> en el mundo de la edición, así como nuestra{' '}
               <b>maestría en los secretos de Amazon</b>, son tu pase dorado para elevarte al
