@@ -259,11 +259,11 @@ export default function IndexPage () {
       <section id='trabajo-social'>
         <div className='container pt-spacing-9'>
           <header>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Trabajo social
             </h2>
             <p className='text-muted-foreground f-subhead-1 text-balance mt-spacing-3'>
-              <span className='f-display-3 font-header f-header block pb-spacing-4'>
+              <span className='f-display-2 font-header f-header block pb-spacing-5'>
                 Ayudar nos mueve
               </span>
               <span className='sr-only'>, por eso{' '}</span>
@@ -272,7 +272,7 @@ export default function IndexPage () {
               <b>Premio Manuel Salvador Gautier de Novela</b>.
             </p>
           </header>
-          <div className='cols-container mt-spacing-6 gap-y-gutter relative z-10'>
+          <div className='cols-container mt-spacing-7 gap-y-gutter relative z-10'>
             {socialWork.map((socialWorkItem, key) => (
               <div className='w-6-cols xs:w-3-cols md:w-4-cols lg:w-3-cols' key={key}>
                 <NextLink
@@ -296,9 +296,10 @@ export default function IndexPage () {
                       <CardDescription title={socialWorkItem.description}>
                         {socialWorkItem.description}
                       </CardDescription>
-                      <div className='pt-spacing-3'>
-                        <div className='f-body-1 font-semibold hover:underline'>
+                      <div className='pt-spacing-4'>
+                        <div className='f-subhead-3 font-semibold hover:underline flex items-center gap-x-2'>
                           Ver articulo
+                          <ArrowRightIcon />
                         </div>
                       </div>
                     </CardHeader>
@@ -312,10 +313,10 @@ export default function IndexPage () {
       <section id='preguntas-frecuentes' className='pt-spacing-9'>
         <div className='container'>
           <div>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               {faq.title}
             </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
+            <p className='f-display-2 mt-spacing-3 text-balance f-header'>
               {faq.description}
             </p>
           </div>
@@ -338,10 +339,10 @@ export default function IndexPage () {
       <section id='nosotros'>
         <div className='container pt-spacing-9'>
           <div>
-            <h2 className='f-body-1 font-light text-muted-foreground uppercase font-primary'>
+            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
               Revista Bien-être
             </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
+            <p className='f-display-2 mt-spacing-3 text-balance font-header f-header'>
               Disfruta gratuitamente de nuestra revista.
             </p>
           </div>
