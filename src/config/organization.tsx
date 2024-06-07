@@ -1,24 +1,11 @@
-import NextLink from '@/components/ui/next-link'
-import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
-import { type CardStackItem, type NavItemExternal } from '@/types'
+import { LinkAuthor } from '@/components/link-author'
+import type {
+  Author,
+  CardStackItem,
+  NavItemExternal
+} from '@/types'
 
-const LinkAuthor = ({ name, url }: Required<Author>) => {
-  const href = typeof url === 'string' ? url : url.href
-
-  return (
-    <NextLink
-      href={href}
-      target='_blank'
-      rel='nooponer noreferrer'
-    >
-      <b>
-        {name}
-      </b>
-    </NextLink>
-  )
-}
-
-export const founder: Required<Author> = {
+export const founder: Author = {
   name: 'Keila González Báez',
   url: 'https://www.keilagonzalezbaez.com/'
 }

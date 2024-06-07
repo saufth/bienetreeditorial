@@ -1,5 +1,7 @@
 import { type ReactNode } from 'react'
-import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
+import { type Author as NextAuthor } from 'next/dist/lib/metadata/types/metadata-types'
+
+export type Author = Required<NextAuthor>
 
 export interface Title {
   title: string

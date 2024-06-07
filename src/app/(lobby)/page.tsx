@@ -17,11 +17,9 @@ import {
 } from '@/components/ui/card'
 import { CardStack } from '@/components/cards/card-stack'
 import { Headline } from '@/components/headline'
-import { products } from '@/config/products'
-import { siteConfig, siteNav } from '@/config/site'
-import BackgroundVideo from '@/components/background-video'
+import { LinkAuthor } from '@/components/link-author'
 import CardVideo from '@/components/cards/card-video'
-import { services } from '@/config/services'
+import BackgroundVideo from '@/components/background-video'
 import {
   aboutUs,
   socialWork,
@@ -30,6 +28,9 @@ import {
   faq,
   founder
 } from '@/config/organization'
+import { services } from '@/config/services'
+import { products } from '@/config/products'
+import { siteConfig, siteNav } from '@/config/site'
 
 export default function IndexPage () {
   const aboutUsLink = siteNav.find((nav) => nav.href === '/nosotros')!
@@ -46,18 +47,13 @@ export default function IndexPage () {
         <div className='full-bleed-container mt-spacing-7 relative aspect-video z-10'>
           <BackgroundVideo src='/video/home-hero.mp4' />
         </div>
-        <div className='f-body-1 container pt-gutter'>
+        <p className='f-body-1 container pt-gutter'>
           Autora:{' '}
-          <NextLink
-            href={founder.url}
-            target='_blank'
-            rel='nooponer noreferrer'
-          >
-            <b className='border-b'>
-              {founder.name}
-            </b>
-          </NextLink>
-        </div>
+          <LinkAuthor
+            url={founder.url}
+            name={founder.name}
+          />
+        </p>
       </section>
       <section id='nosotros'>
         <div className='container pt-spacing-9'>

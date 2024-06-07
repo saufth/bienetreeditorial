@@ -1,6 +1,6 @@
-import { type Author } from 'next/dist/lib/metadata/types/metadata-types'
 import { whatsappUrl } from '@/lib/utils'
 import type {
+  Author,
   SiteConfig,
   MainNavItem,
   NavItem,
