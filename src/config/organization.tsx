@@ -10,6 +10,11 @@ export const founder: Author = {
   url: 'https://www.keilagonzalezbaez.com/'
 }
 
+export const magazine: Author = {
+  name: 'Bien-être',
+  url: 'https://issuu.com/bienetremedia/'
+}
+
 export const aboutUs = {
   label: 'Acerca de nosotros',
   title: 'Descubre Bienetre',
@@ -18,7 +23,7 @@ export const aboutUs = {
     description: () => (
       <p className='text-muted-foreground f-subhead-1 text-balance'>
         <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz y saludable,
-        a través de su <b>revista bimestral Bien-être</b>. Durante 10 años docenas de personalidades desfilaron por sus páginas
+        a través de su revista bimestral <LinkAuthor {...magazine} />. Durante 10 años docenas de personalidades desfilaron por sus páginas
         brindando entrevistas exclusivas, así como sus secretos para el éxito.{' '}
         <LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' />,{' '}
         <LinkAuthor url='https://juliobevione.com/' name='Julio Bevione' />,{' '}
