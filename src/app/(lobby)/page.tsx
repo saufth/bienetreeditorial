@@ -277,7 +277,7 @@ export default function IndexPage () {
             </h2>
             <p className='text-muted-foreground f-subhead-1 text-balance mt-spacing-3'>
               <span className='f-display-2 font-header f-header block pb-spacing-5'>
-                Ayudar nos mueve
+                Ayudar nos mueve.
               </span>
               <span className='sr-only'>, por eso{' '}</span>
               Impulsamos dos iniciativas que contribuyen a la difusión de la literatura y sus beneficios
