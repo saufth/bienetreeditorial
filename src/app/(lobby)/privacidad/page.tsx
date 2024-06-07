@@ -12,7 +12,7 @@ export default function PrivacyPage () {
   return (
     <>
       <section>
-        <div className='container py-spacing-7'>
+        <div className='container pt-spacing-9'>
           <div className='max-w-5xl mx-auto'>
             <h1 className='f-display-2 font-medium pb-spacing-7 text-center'>
               Política de privacidad

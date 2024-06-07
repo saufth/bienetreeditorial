@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { Headline } from '@/components/headline'
+import { Hero } from '@/components/sections/hero'
 import { services } from '@/config/services'
 import { siteConfig } from '@/config/site'
 
@@ -13,18 +13,7 @@ export const metadata: Metadata = {
 export default function ServicesPage () {
   return (
     <>
-      <section className='py-spacing-7'>
-        <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
-          <Headline>
-            {`${services.title}.`}
-          </Headline>
-          <div className='mt-spacing-6 max-w-md lg:max-w-lg'>
-            <p className='text-muted-foreground f-subhead-2 text-right text-balance'>
-              {services.description}
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero title={services.title} description={services.description} />
       <section className='pt-spacing-9'>
         <div className='container'>
           <div>

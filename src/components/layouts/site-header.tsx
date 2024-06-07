@@ -47,10 +47,9 @@ export default function SiteHeader () {
           borderColor: isOnTop || isMenuOpen ? 'transparent' : 'oklch(var(--border))'
         }}
         transition={{
-          duration: 0.5,
-          delay: 0.1
+          duration: 0.5
         }}
-        className='w-full sticky top-0 left-0 z-40 bg-background/80 backdrop-saturate-150 backdrop-blur-lg border-b'
+        className='w-full fixed top-0 left-0 z-40 bg-background/80 backdrop-saturate-150 backdrop-blur-lg border-b'
       >
         <nav aria-label={`${siteConfig.name} directory`}>
           <div className='container relative z-10'>

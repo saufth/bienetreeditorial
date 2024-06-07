@@ -16,7 +16,7 @@ import {
   CardTitle
 } from '@/components/ui/card'
 import { CardStack } from '@/components/cards/card-stack'
-import { Headline } from '@/components/headline'
+import { Hero } from '@/components/sections/hero'
 import { LinkAuthor } from '@/components/link-author'
 import CardVideo from '@/components/cards/card-video'
 import BackgroundVideo from '@/components/background-video'
@@ -39,23 +39,20 @@ export default function IndexPage () {
 
   return (
     <>
-      <section className='pt-spacing-7'>
-        <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
-          <Headline>
-            {`${siteConfig.slogan}.`}
-          </Headline>
+      <Hero title={siteConfig.slogan}>
+        <div className='mt-spacing-7 flex flex-col space-y-gutter'>
+          <div className='full-bleed-container relative z-10 aspect-video'>
+            <BackgroundVideo src='/video/home-hero.mp4' />
+          </div>
+          <p className='f-body-1 container'>
+            Autora:{' '}
+            <LinkAuthor
+              url={founder.url}
+              name={founder.name}
+            />
+          </p>
         </div>
-        <div className='full-bleed-container mt-spacing-7 relative aspect-video z-10'>
-          <BackgroundVideo src='/video/home-hero.mp4' />
-        </div>
-        <p className='f-body-1 container pt-gutter'>
-          Autora:{' '}
-          <LinkAuthor
-            url={founder.url}
-            name={founder.name}
-          />
-        </p>
-      </section>
+      </Hero>
       <section id='nosotros'>
         <div className='container pt-spacing-9'>
           <header>
@@ -278,8 +275,8 @@ export default function IndexPage () {
               </span>
               <span className='sr-only'>, por eso{' '}</span>
               Impulsamos dos iniciativas que contribuyen a la <b>difusión de la literatura y sus beneficios</b>{' '}
-              entre niños, jóvenes y adultos: <b>Fundación Futuros Autores del Mundo</b> y el{' '}
-              <b>Premio Manuel Salvador Gautier de Novela</b>.
+              entre niños, jóvenes y adultos: <b>Fundación Futuros Autores del Mundo</b> y el
+              {' '}<b>Premio Manuel Salvador Gautier de Novela</b>.
             </p>
           </header>
           <div className='cols-container mt-spacing-7 gap-y-gutter relative z-10'>

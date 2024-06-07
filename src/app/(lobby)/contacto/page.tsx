@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { Headline } from '@/components/headline'
+import { Hero } from '@/components/sections/hero'
 import { siteConfig } from '@/config/site'
 import ContactForm from '@/components/forms/contact-form'
 
@@ -13,12 +13,8 @@ export const metadata: Metadata = {
 export default function ContactPage () {
   return (
     <>
-      <section className='pt-spacing-7'>
-        <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
-          <Headline>
-            Trabaja con nosotros
-          </Headline>
-        </div>
+      <Hero title='Trabaja con nosotros' />
+      <section>
         <div className='container pt-spacing-9'>
           <div>
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
