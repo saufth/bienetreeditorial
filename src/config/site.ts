@@ -95,6 +95,7 @@ export const siteConfig: SiteConfig = {
       title: 'Página principal',
       href: '/'
     },
-    ...siteNav
+    ...siteNav,
+    ...homeNav
   ]
 }

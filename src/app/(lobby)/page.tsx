@@ -46,7 +46,7 @@ export default function IndexPage () {
         <div className='full-bleed-container mt-spacing-7 relative aspect-video z-10'>
           <BackgroundVideo src='/video/home-hero.mp4' />
         </div>
-        <div className='f-subhead-3 container pt-gutter'>
+        <div className='f-body-1 container pt-gutter'>
           Autora:{' '}
           <NextLink
             href={founder.url}
