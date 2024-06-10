@@ -6,13 +6,14 @@ export interface LinkAuthorProps extends Author {
   className?: string
 }
 
-export const LinkAuthor = ({ name, url, className }: LinkAuthorProps) => {
+export const LinkAuthor = ({ name, description, url, className }: LinkAuthorProps) => {
   const href = typeof url === 'string' ? url : url.href
 
   return (
     <NextLink
       href={href}
       target='_blank'
+      title={description}
       rel='nooponer noreferrer'
       className={cn('border-b hover:border-primary', className)}
     >

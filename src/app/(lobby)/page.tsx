@@ -45,11 +45,8 @@ export default function IndexPage () {
             <BackgroundVideo src='/video/home-hero.mp4' />
           </div>
           <p className='f-body-1 container'>
-            Autora:{' '}
-            <LinkAuthor
-              url={founder.url}
-              name={founder.name}
-            />
+            <LinkAuthor {...founder} />
+            {` ${founder.description}`}
           </p>
         </div>
       </Hero>
@@ -111,6 +108,7 @@ export default function IndexPage () {
                     <Image
                       src={product.image.src}
                       alt={product.image.alt}
+                      title={product.description}
                       width={product.image.width}
                       height={product.image.height}
                       sizes='(max-width: 744px) 100vw, (max-width: 1280px) 50vw, 500px'

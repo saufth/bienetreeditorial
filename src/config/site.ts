@@ -9,6 +9,7 @@ import type {
 
 export const author: Author = {
   name: 'saufth',
+  description: 'Desarrollador web, autor del proyecto Bienetre Editorial',
   url: 'https://github.com/saufth'
 }
 

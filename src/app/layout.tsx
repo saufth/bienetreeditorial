@@ -13,8 +13,8 @@ import '@/styles/globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} ⚊ ${siteConfig.slogan}`,
-    template: `${siteConfig.name} ⚊ %s`
+    default: `${siteConfig.name}: ${siteConfig.slogan}`,
+    template: `${siteConfig.name}: %s`
   },
   description: siteConfig.description,
   keywords: [

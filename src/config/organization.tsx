@@ -4,14 +4,17 @@ import type {
   CardStackItem,
   NavItemExternal
 } from '@/types'
+import { siteConfig } from '@/config/site'
 
 export const founder: Author = {
   name: 'Keila González Báez',
+  description: `Founder & CEO de ${siteConfig.name}`,
   url: 'https://www.keilagonzalezbaez.com/'
 }
 
 export const magazine: Author = {
   name: 'Bien-être',
+  description: 'Revista bimestral',
   url: 'https://issuu.com/bienetremedia/'
 }
 
@@ -25,10 +28,10 @@ export const aboutUs = {
         <b>Bienetre Editorial</b> nació en 2010 con el objetivo de acercar a las personas a vivir una vida más feliz
         y saludable, a través de su revista bimestral <LinkAuthor {...magazine} />. Durante más de 10 años docenas de
         personalidades han desfilado por sus páginas brindando entrevistas exclusivas, así como sus secretos para el éxito.
-        {' '}<LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' />,
-        {' '}<LinkAuthor url='https://juliobevione.com/' name='Julio Bevione' />,
-        {' '}<LinkAuthor url='https://gloriaestefan.com/' name='Gloria Estefan' />,
-        {' '}<LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú' />{' '}
+        {' '}<LinkAuthor url='https://www.isabelallende.com/' name='Isabel Allende' description='Escritora chilena, miembro de la Academia Estadounidense de las Artes y las Letras desde 2004. Obtuvo el Premio Nacional de Literatura de Chile en 2010. Autora superventas, la venta total de sus libros alcanza 73 millones de ejemplares y sus obras han sido traducidas a 42 idiomas, considerada como la escritora viva más leída del mundo de la lengua española.' />,
+        {' '}<LinkAuthor url='https://juliobevione.com/' name='Julio Bevione'description='Autor, escritor, conferencista, y periodista argentino con nacionalidad estadounidense. Actualmente reside en los Estados Unidos, y continúa su trabajo como comunicador en la ciudad de Miami, Florida.' />,
+        {' '}<LinkAuthor url='https://gloriaestefan.com/' name='Gloria Estefan'description='Gloria María Milagrosa Fajardo García, conocida artísticamente como Gloria Estefan, es una cantautora, actriz, compositora, productora y empresaria cubanoestadounidense.' />,
+        {' '}<LinkAuthor url='https://es.wikipedia.org/wiki/Rigoberta_Mench%C3%BA' name='Rigoberta Menchú'description='Líder indígena y activista guatemalteca, miembro del grupo maya quiché, defensora de los derechos humanos, embajadora de los pueblos indígenas del mundo de la UNESCO y ganadora del Premio Nobel de la Paz (1992) y el Premio Príncipe de Asturias de Cooperación Internacional.' />{' '}
         son solo algunas de ellas.
       </p>
     ),

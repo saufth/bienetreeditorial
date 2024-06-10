@@ -1,8 +1,6 @@
 import { type ReactNode } from 'react'
 import { type Author as NextAuthor } from 'next/dist/lib/metadata/types/metadata-types'
 
-export type Author = Required<NextAuthor>
-
 export interface Title {
   title: string
 }
@@ -14,6 +12,8 @@ export interface Description {
 export interface Label {
   label: string
 }
+
+export type Author = Required<NextAuthor> & Description
 
 export interface ImageProps {
   src: string
