@@ -39,7 +39,7 @@ export default function IndexPage () {
 
   return (
     <>
-      <Hero title={siteConfig.slogan}>
+      <Hero title={siteConfig.slogan} highlight={2}>
         <div className='mt-spacing-7 flex flex-col space-y-gutter'>
           <div className='full-bleed-container relative z-10 aspect-video'>
             <BackgroundVideo src='/video/home-hero.mp4' />
