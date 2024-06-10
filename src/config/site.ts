@@ -1,15 +1,14 @@
+import { Author as NextAuthor } from 'next/dist/lib/metadata/types/metadata-types'
 import { whatsappUrl } from '@/lib/utils'
 import type {
-  Author,
   SiteConfig,
   MainNavItem,
   NavItem,
   NavItemExternal
 } from '@/types'
 
-export const author: Author = {
+export const author: NextAuthor = {
   name: 'saufth',
-  description: 'Desarrollador web, autor del proyecto Bienetre Editorial',
   url: 'https://github.com/saufth'
 }
 

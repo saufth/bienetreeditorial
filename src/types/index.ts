@@ -82,7 +82,7 @@ export interface SiteConfig {
   slogan: string
   description: string,
   url: URL | string,
-  author: Author,
+  author: NextAuthor,
   mainNav: MainNavItem[]
 }
 
