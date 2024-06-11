@@ -1,8 +1,9 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import { Hero } from '@/components/sections/hero'
-import { siteConfig } from '@/config/site'
+import { SectionHeader } from '@/components/sections/section-header'
 import ContactForm from '@/components/forms/contact-form'
+import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -13,17 +14,13 @@ export const metadata: Metadata = {
 export default function ContactPage () {
   return (
     <>
-      <Hero title='Trabaja con nosotros' />
+      <Hero title='Trabaja con nosotros' highlight={2} />
       <section>
         <div className='container pt-spacing-9'>
-          <div>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Ponte en contacto
-            </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
-              Solicita un presupuesto.
-            </p>
-          </div>
+          <SectionHeader
+            title='Ponte en contacto'
+            description='Solicita un presupuesto.'
+          />
           <div className='mt-spacing-6 space-y-spacing-4'>
             <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>
               Solicita ahora un presupuesto y recibe <b>gratis</b> nuestro e-book{' '}

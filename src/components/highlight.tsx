@@ -17,9 +17,9 @@ export const Highlight = ({ children, index }: HighlightProps) => {
             : (
               <span key={key}>
                 {space}
-                <span className='relative z-10'>
+                <span className='inline-block relative z-10'>
                   {word}
-                  <span className='w-full h-3/5 absolute inset-0 m-auto bg-accent top-3 -z-10' />
+                  <span className='w-full h-3/5 absolute inset-0 m-auto bg-accent top-1 md:top-2 -right-1 md:-right-2 -z-10' />
                 </span>
               </span>
               )

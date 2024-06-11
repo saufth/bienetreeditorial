@@ -18,6 +18,7 @@ import {
 import { CardStack } from '@/components/cards/card-stack'
 import { Hero } from '@/components/sections/hero'
 import { LinkAuthor } from '@/components/link-author'
+import { SectionHeader } from '@/components/sections/section-header'
 import CardVideo from '@/components/cards/card-video'
 import BackgroundVideo from '@/components/background-video'
 import {
@@ -32,7 +33,6 @@ import {
 import { services } from '@/config/services'
 import { products } from '@/config/products'
 import { siteConfig, siteNav } from '@/config/site'
-import { SectionHeader } from '@/components/sections/section-header'
 
 export default function IndexPage () {
   const aboutUsLink = siteNav.find((nav) => nav.href === '/nosotros')!
@@ -88,16 +88,12 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section className='pt-spacing-9'>
+      <section id='publicaciones-recientes' className='pt-spacing-9'>
         <div className='container'>
-          <div>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Publicaciones recientes
-            </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
-              Autores que publicaron con nosotros recientemente.
-            </p>
-          </div>
+          <SectionHeader
+            title='Publicaciones recientes'
+            description='Autores que publicaron con nosotros recientemente.'
+          />
           <div className='cols-container mt-spacing-6'>
             {products.map((product, key) => (
               <article className='w-8-cols sm:w-1/3-cols lg:w-4-cols mt-spacing-6' key={key}>
@@ -136,12 +132,10 @@ export default function IndexPage () {
           <div className='cols-container mt-spacing-9'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols'>
               <div className='sm:max-w-lg sm:pt-spacing-6 lg:pt-spacing-7'>
-                <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-                  {services.label}
-                </h2>
-                <p className='f-display-3 mt-spacing-3 text-balance f-header'>
-                  {services.title}.
-                </p>
+                <SectionHeader
+                  title={services.label}
+                  description={`${services.title}.`}
+                />
                 <Button
                   asChild
                   size='lg'
@@ -172,14 +166,10 @@ export default function IndexPage () {
       </section>
       <section id='nuestras-alianzas' className='pt-spacing-9'>
         <div className='container'>
-          <div>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Nuestras alianzas
-            </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
-              Ellos confiaron en nosotros.
-            </p>
-          </div>
+          <SectionHeader
+            title='Nuestras alianzas'
+            description='Ellos confiaron en nosotros.'
+          />
           <div className='cols-container items-center justify-center gap-y-gutter mt-spacing-6'>
             {trustedBy.map((client, key) => {
               const imageHeightStyles = [
@@ -232,12 +222,10 @@ export default function IndexPage () {
         <div className='container pt-spacing-9'>
           <div className='cols-container space-y-spacing-7 md:space-y-0'>
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-                Testimonios
-              </h2>
-              <p className='f-display-3 mt-spacing-3 text-balance f-header'>
-                Lo que opinan nuestros clientes.
-              </p>
+              <SectionHeader
+                title='Testimonios'
+                description='Lo que opinan nuestros clientes.'
+              />
             </div>
             <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
               <CardStack className='w-full h-[480px]' items={testimonials} />
@@ -315,14 +303,10 @@ export default function IndexPage () {
       </section>
       <section id='preguntas-frecuentes' className='pt-spacing-9'>
         <div className='container'>
-          <div>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              {faq.title}
-            </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
-              {faq.description}
-            </p>
-          </div>
+          <SectionHeader
+            title={faq.title}
+            description={faq.description}
+          />
           <div className='mt-spacing-6'>
             <Accordion type='single' collapsible className='w-full'>
               {faq.items.map((faqItem, key) => (
@@ -339,16 +323,12 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section id='nosotros'>
+      <section id='nuestra-revista'>
         <div className='container pt-spacing-9'>
-          <div>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Revista Bien-être
-            </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance font-header f-header'>
-              Disfruta gratuitamente de nuestra revista.
-            </p>
-          </div>
+          <SectionHeader
+            title='Revista Bien-être'
+            description='Disfruta gratuitamente de nuestra revista.'
+          />
           <div className='mt-spacing-6 cols-container'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
               <p className='text-muted-foreground f-subhead-1 text-balance [&>a]:border-b'>

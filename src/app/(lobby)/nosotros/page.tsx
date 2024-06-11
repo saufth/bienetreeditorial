@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AboutUsPage () {
   return (
     <>
-      <Hero title={`${aboutUs.title}.`} description={aboutUs.description} />
+      <Hero title={aboutUs.title} description={aboutUs.description} highlight={1} />
       <section>
         <div className='container pt-spacing-9'>
           <header>

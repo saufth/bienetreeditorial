@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import { Hero } from '@/components/sections/hero'
+import { SectionHeader } from '@/components/sections/section-header'
 import { services } from '@/config/services'
 import { siteConfig } from '@/config/site'
 
@@ -16,14 +17,10 @@ export default function ServicesPage () {
       <Hero title={services.title} description={services.description} />
       <section className='pt-spacing-9'>
         <div className='container'>
-          <div>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Nuestros servicios
-            </h2>
-            <p className='f-display-3 mt-spacing-3 text-balance f-header'>
-              Queremos que los autores alcancen su objetivo.
-            </p>
-          </div>
+          <SectionHeader
+            title='Nuestros servicios'
+            description='Queremos que los autores alcancen su objetivo.'
+          />
           <div className='space-y-spacing-8 mt-spacing-8'>
             {services.items.map((serviceItem, key) => (
               <article className='cols-container mt-spacing-3 odd:flex-row-reverse' key={key}>
