@@ -9,9 +9,7 @@ export interface Description {
   description: string
 }
 
-export interface Label {
-  label: string
-}
+export type Header = Title & Description
 
 export type Author = Required<NextAuthor> & Description
 
@@ -25,14 +23,6 @@ export interface ImageProps {
 export interface ImageData {
   image: ImageProps
 }
-
-export type Heading = Title & Description
-
-export type HeadingWithOptionalDescription = Title & Partial<Description>
-
-export type HeadingWithImage = Heading & ImageData
-
-export type HeadingWithImageLabel = HeadingWithImage & Partial<Label>
 
 export interface NavItem extends Title {
   href: string
@@ -48,7 +38,7 @@ export interface NavItemWithChildren extends NavItem {
 
 export type MainNavItem = NavItemWithChildren
 
-export interface Item extends HeadingWithImageLabel {
+export interface Item extends Header, Partial<ImageData> {
   slug?: string
 }
 

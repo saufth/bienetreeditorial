@@ -39,7 +39,7 @@ interface CardDataProps extends CardProps {
 
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
+  React.HTMLAttributes<HTMLHeaderElement>
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}

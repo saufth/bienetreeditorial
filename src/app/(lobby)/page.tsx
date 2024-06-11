@@ -32,6 +32,7 @@ import {
 import { services } from '@/config/services'
 import { products } from '@/config/products'
 import { siteConfig, siteNav } from '@/config/site'
+import { SectionHeader } from '@/components/sections/section-header'
 
 export default function IndexPage () {
   const aboutUsLink = siteNav.find((nav) => nav.href === '/nosotros')!
@@ -52,14 +53,11 @@ export default function IndexPage () {
       </Hero>
       <section id='nosotros'>
         <div className='container pt-spacing-9'>
-          <header>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              {aboutUs.label}
-            </h2>
-            <p className='f-display-3 xs:f-display-2 mt-spacing-3 text-balance font-header f-header'>
-              {aboutUs.description}
-            </p>
-          </header>
+          <SectionHeader
+            title={aboutUs.label}
+            description={aboutUs.description}
+            highlight={8}
+          />
           <div className='mt-spacing-6 cols-container'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
               <aboutUs.content.description />
@@ -172,11 +170,11 @@ export default function IndexPage () {
           </div>
         </div>
       </section>
-      <section id='nuestros-clientes' className='pt-spacing-9'>
+      <section id='nuestras-alianzas' className='pt-spacing-9'>
         <div className='container'>
           <div>
             <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Nuestros clientes
+              Nuestras alianzas
             </h2>
             <p className='f-display-3 mt-spacing-3 text-balance f-header'>
               Ellos confiaron en nosotros.

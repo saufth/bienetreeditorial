@@ -18,8 +18,8 @@ export const homeNav: MainNavItem[] = [
     href: '/#publicaciones-recientes'
   },
   {
-    title: 'Nuestros clientes',
-    href: '/#nuestros-clientes'
+    title: 'Nuestras alianzas',
+    href: '/#nuestras-alianzas'
   },
   {
     title: 'Testimonios',

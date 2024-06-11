@@ -10,14 +10,14 @@ export interface HeroProps extends Title, Partial<Description>, PropsWithChildre
 }
 
 export const Hero = ({ title, description, highlight = 0, children, className }: HeroProps) => {
-  const headline = title.split(' ')
+  const headingData = title.split(' ')
+  const highlightIndex = highlight < headingData.length && highlight >= 0 ? highlight : 0
   return (
     <section className={cn('pt-spacing-9', className)}>
       <div className='container flex flex-col items-end 2xs:pr-spacing-5 xs:pl-[67px] sm:pl-0 xs:pr-spacing-8'>
         <h1 className='f-display-1 font-header x:leading-[150%] sm:leading-[140%] xl:leading-[140%] -tracking-tight text-right'>
-          {headline.map((word, key) => {
-            const highlightItndex = highlight < headline.length && highlight >= 0 ? highlight : 0
-            return key !== highlightItndex
+          {headingData.map((word, key) => {
+            return key !== highlightIndex
               ? `${word} `
               : (
                 <span className='w-full block relative z-0' key={key}>

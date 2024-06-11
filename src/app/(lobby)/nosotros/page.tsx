@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections/hero'
 import { Icons } from '@/components/icons'
 import { aboutUs } from '@/config/organization'
 import { siteConfig } from '@/config/site'
+import { Highlight } from '@/components/highlight'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,7 +52,13 @@ export default function AboutUsPage () {
               {aboutUs.content.items.map((aboutUsItem, key) => (
                 <article className='space-y-spacing-4' key={key}>
                   <h3 className='f-heading-2 mt-spacing-3 text-balance font-header f-header'>
-                    {aboutUsItem.title}
+                    {aboutUsItem.title === 'Porqué podemos ayudarte'
+                      ? (
+                        <Highlight index={1}>
+                          {aboutUsItem.title}
+                        </Highlight>
+                        )
+                      : aboutUsItem.title}
                   </h3>
                   <aboutUsItem.description />
                 </article>
