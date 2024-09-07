@@ -97,19 +97,14 @@
       --spacing-spacing-9: 11.25rem;
       --spacing-spacing-10: 13.75rem;
       --spacing-spacing-11: 16.5rem;
+      /* Container */
+      --container-sm-width: 1024px;
     }
   }
 
   @media (min-width: 1280px) {
     :root {
       --outer-gutter: 60px;
-      --container-sm-width: 1260px;
-    }
-  }
-
-  @media (min-width: 1380px) {
-    :root {
-      --container-sm-width: 1366px;
     }
   }
 
@@ -213,6 +208,10 @@
 
   .container {
     @apply w-[calc(var(--container-width,100%)-(2*var(--outer-gutter,0)))] mx-auto;
+  }
+
+  .small-container {
+    @apply w-[calc(var(--container-sm-width,100%)-(2*var(--outer-gutter,0)))] mx-auto;
   }
 
   .cols-container {

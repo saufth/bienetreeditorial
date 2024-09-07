@@ -24,14 +24,25 @@ export const products: Product[] = [
     }
   },
   {
-    title: 'El arte de cobrar de forma efectiva',
-    description: 'El arte de cobrar de forma efectiva de Darnetty Lugo',
-    author: 'Darnetty Lugo',
+    title: 'Follow the Hippies',
+    description: 'Follow the Hippies de César Fernández del Campo Rabatte',
+    author: 'César Fernández del Campo Rabatte',
     image: {
-      src: '/images/products/el-arte-de-cobrar-de-forma-efectiva-darnetty-lugo.webp',
-      alt: 'Protada del libro El arte de cobrar de forma efectiva de Darnetty Lugo',
+      src: '/images/products/follow-the-hippies.webp',
+      alt: 'Protada del libro Follow the Hippies de César Fernández del Campo Rabatte',
       width: 900,
       height: 1350
     }
   }
+  // {
+  //   title: 'El arte de cobrar de forma efectiva',
+  //   description: 'El arte de cobrar de forma efectiva de Darnetty Lugo',
+  //   author: 'Darnetty Lugo',
+  //   image: {
+  //     src: '/images/products/el-arte-de-cobrar-de-forma-efectiva-darnetty-lugo.webp',
+  //     alt: 'Protada del libro El arte de cobrar de forma efectiva de Darnetty Lugo',
+  //     width: 900,
+  //     height: 1350
+  //   }
+  // }
 ]

@@ -1,21 +1,49 @@
-import { Header } from '@/types'
-import { Highlight } from '@/components/highlight'
+import { Highlight, type HighlightProps } from '@/components/highlight'
+import { cn } from '@/lib/utils'
+import type { Header } from '@/types'
 
-interface SectionHeaderProps extends Header {
-  highlight?: number
+interface SectionHeaderProps extends Header, Pick<HighlightProps, 'index' | 'indexEnd'> {
+  className?: string
+  headlineClassName?: string
+  paragraphClassName?: string
 }
 
-export const SectionHeader = ({ title, description, highlight = -1 } : SectionHeaderProps) => {
+const SectionHeader = (
+  {
+    title,
+    description,
+    index,
+    indexEnd,
+    className,
+    headlineClassName,
+    paragraphClassName
+  } : SectionHeaderProps
+) => {
   return (
-    <header>
-      <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
+    <div className={className}>
+      <h2
+        className={cn(
+          'text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary',
+          headlineClassName
+        )}
+      >
         {title}
       </h2>
-      <p className='f-display-2 xs:f-display-2 mt-spacing-3 text-balance font-header f-header'>
-        <Highlight index={highlight}>
+      <p
+        className={cn(
+          'f-display-2 xs:f-display-2 mt-spacing-3 text-balance font-header f-header',
+          paragraphClassName
+        )}
+      >
+        <Highlight index={index} indexEnd={indexEnd}>
           {description}
         </Highlight>
       </p>
-    </header>
+    </div>
   )
+}
+
+export {
+  SectionHeader,
+  type SectionHeaderProps
 }

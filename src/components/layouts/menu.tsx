@@ -6,8 +6,7 @@ import {
   siteConfig,
   contactEmail,
   socialNav,
-  contactPhone,
-  address
+  contact
 } from '@/config/site'
 
 export interface MenuProps {
@@ -20,7 +19,7 @@ export default function Menu ({ action, muted }: MenuProps) {
     <div className='cols-container gap-y-spacing-6'>
       <div className='w-6-cols sm:w-5-cols lg:w-9-cols flex flex-col gap-y-spacing-4 order-2 sm:order-1'>
         <Link
-          href={whatsappUrl(contactPhone)}
+          href={whatsappUrl(contact[0]!.phone.fullNumber)}
           onClick={action}
           aria-label='Whatsapp de atención al cliente, se abre en una nueva pestaña'
           target='_blank'
@@ -30,10 +29,10 @@ export default function Menu ({ action, muted }: MenuProps) {
         >
           <Icons.WhatsappOutlined className={cn('w-auto h-6 lg:h-8', muted && 'stroke-card-foreground')} />
           <span className='sr-only'>Whatsapp{' '}</span>
-          {formatPhoneNumber(contactPhone)}
+          +1 {formatPhoneNumber(contact[0]!.phone.number)}
         </Link>
         <Link
-          href={address.url}
+          href={contact[0]!.address.url}
           onClick={action}
           aria-label='Abre la ubicación del corporativo en Google Maps, se abre en una nueva pestaña o en tu aplicación de mapas predeterminada'
           target='_blank'
@@ -41,7 +40,7 @@ export default function Menu ({ action, muted }: MenuProps) {
           rel='noreferrer'
           className={cn('w-fit text-balance', muted && 'text-card-foreground')}
         >
-          {address.name}
+          {contact[0]!.address.name}
         </Link>
         <Link
           href={`mailto:${contactEmail}`}

@@ -52,7 +52,7 @@ export default function CardVideo ({ src }: BackgroundVideoProps) {
   return (
     <div className='relative'>
       <video
-        className='relative w-full object-fill'
+        className='relative w-full'
         width={1920}
         height={1080}
         controls={isPlaying}

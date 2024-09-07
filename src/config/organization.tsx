@@ -254,12 +254,12 @@ export const faq = {
 
 export const socialWork = [
   {
-    title: 'Editorial Bienetre pone a circular poemario maya-español escrito por niños y niñas',
-    description: 'Trece niños y niñas mexicanos de edades entre 8 y 11 años, se conviertieron en autores gracias a A90D Impulsa: una iniciativa promovida por la editorial dominicana Bienetre.',
+    title: 'Futuros Autores del Mundo presenta libro multicultural',
+    description: 'La fundación dominicana Futuros Autores del Mundo fue la responsable de la producción de la tan esperada quinta edición de Caleidoscopio, una colección de cuentos escritos por niños para niños.',
     url: 'https://elnuevodiario.com.do/editorial-bienetre-pone-a-circular-poemario-maya-espanol-escrito-por-ninos-y-ninas/',
     image: {
       src: '/images/social-work/social-work-00.webp',
-      alt: 'Editorial Bienetre pone a circular poemario maya-español escrito por niños y niñas',
+      alt: 'Keila González Báez junto a los niños autores de esta 5ta edición del libro Caleidoscopio.',
       width: 512,
       height: 512
     }
@@ -276,12 +276,12 @@ export const socialWork = [
     }
   },
   {
-    title: 'Fundación dona libros escritos por niños para niños',
-    description: 'Niños de entre 6 y 10 años de edad fueron los protagonistas del lanzamiento de la 4ta edición del libro de cuentos escrito por niños para niños, en el Colegio de los periodistas de Santiago.',
-    url: 'https://listindiario.com/ventana/20230621/fundacion-dona-libros-escritos-ninos-ninos_759826.html',
+    title: 'Futuros Autores del Mundo lanza poemario en braille en la FIL Guadalajara 2023',
+    description: 'La Feria Internacional del Libro de Guadalajara 2023 fue el escenario para un evento sin precedentes: el lanzamiento del poemario Más allá de la visión, una obra impresa en tinta y braille, escrita por talentosos niños y niñas no videntes de México y República Dominicana.',
+    url: 'https://www.diariolibre.com/revista/cultura/2023/12/05/lanzan-poemario-en-braille-en-la-fil-guadalajara-2023/2542610',
     image: {
       src: '/images/social-work/social-work-02.webp',
-      alt: 'Fundación dona libros escritos por niños para niños',
+      alt: 'Los jóvenes autores compartieron sus experiencias durante la FIL Guadalajara 2023',
       width: 512,
       height: 512
     }

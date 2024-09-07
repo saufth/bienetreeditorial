@@ -3,8 +3,7 @@ import { whatsappUrl } from '@/lib/utils'
 import type {
   SiteConfig,
   MainNavItem,
-  NavItem,
-  NavItemExternal
+  NavItem
 } from '@/types'
 
 export const author: NextAuthor = {
@@ -52,9 +51,22 @@ export const siteNav: MainNavItem[] = [
 
 export const domain = 'bienetreeditorial.com'
 
-export const contactEmail = `contacto@${domain}`
+export const contactEmail = 'asistencia@bienetremedia.com'
 
-export const contactPhone = '5555555555'
+export const contact = [
+  {
+    country: 'República Dominicana',
+    phone: {
+      number: '8092794504',
+      code: '+1',
+      fullNumber: '+18092794504'
+    },
+    address: {
+      name: 'Santiago, República Dominicana, 51000',
+      url: 'https://maps.app.goo.gl/SNbTbfihTpc9FjRT6'
+    }
+  }
+]
 
 export const socialNav: NavItem[] = [
   {
@@ -75,14 +87,9 @@ export const socialNav: NavItem[] = [
   },
   {
     title: 'whatsapp',
-    href: whatsappUrl(contactPhone)
+    href: whatsappUrl(contact[0]!.phone.fullNumber)
   }
 ]
-
-export const address: NavItemExternal = {
-  name: 'Lorem ipsum #55 Int. #55 Col. Centro 55555, Querétaro, Qro.',
-  url: 'https://maps.app.goo.gl/eRYE6njBE8pBw3Vz6'
-}
 
 export const siteConfig: SiteConfig = {
   name: 'Bienetre Editorial',

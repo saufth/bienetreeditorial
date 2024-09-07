@@ -42,10 +42,10 @@ export default function IndexPage () {
     <>
       <Hero title={siteConfig.slogan} highlight={2}>
         <div className='mt-spacing-7 flex flex-col space-y-gutter'>
-          <div className='full-bleed-container relative z-10 aspect-video'>
+          <div className='small-container relative z-10 aspect-video'>
             <BackgroundVideo src='/video/home-hero.mp4' />
           </div>
-          <p className='f-body-1 container'>
+          <p className='small-container f-body-1 container'>
             <LinkAuthor {...founder} />
             {` ${founder.description}`}
           </p>
@@ -56,7 +56,8 @@ export default function IndexPage () {
           <SectionHeader
             title={aboutUs.label}
             description={aboutUs.description}
-            highlight={8}
+            index={6}
+            indexEnd={8}
           />
           <div className='mt-spacing-6 cols-container'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
@@ -92,7 +93,9 @@ export default function IndexPage () {
         <div className='container'>
           <SectionHeader
             title='Publicaciones recientes'
-            description='Autores que publicaron con nosotros recientemente.'
+            description='Conoce algunos de nuestros best sellers.'
+            index={4}
+            indexEnd={5}
           />
           <div className='cols-container mt-spacing-6'>
             {products.map((product, key) => (
@@ -135,6 +138,8 @@ export default function IndexPage () {
                 <SectionHeader
                   title={services.label}
                   description={`${services.title}.`}
+                  index={2}
+                  indexEnd={3}
                 />
                 <Button
                   asChild
@@ -232,37 +237,33 @@ export default function IndexPage () {
             </div>
           </div>
           <div className='cols-container mt-gutter gap-y-gutter relative z-10'>
-            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <CardVideo src='/video/home-about-us.mp4' />
-            </div>
-            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <CardVideo src='/video/home-about-us.mp4' />
-            </div>
-            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <CardVideo src='/video/home-about-us.mp4' />
-            </div>
-            <div className='w-6-cols md:w-4-cols lg:w-6-cols'>
-              <CardVideo src='/video/home-about-us.mp4' />
-            </div>
+            {(new Array(6).fill(true)).map((_item, key) => (
+              <div className='w-2-cols md:w-2-cols lg:w-3-cols' key={key}>
+                <CardVideo src={`/video/testimonials-${key}.mp4`} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
       <section id='trabajo-social'>
         <div className='container pt-spacing-9'>
-          <header>
-            <h2 className='text-sm sm:f-body-1 font-light text-muted-foreground uppercase font-primary'>
-              Trabajo social
-            </h2>
-            <p className='text-muted-foreground f-subhead-1 text-balance mt-spacing-3'>
-              <span className='f-display-2 font-header f-header block pb-spacing-5'>
-                Ayudar nos mueve.
-              </span>
-              <span className='sr-only'>, por eso{' '}</span>
+          <div>
+            <SectionHeader
+              title='Trabajo social'
+              description='Ayudar nos mueve.'
+              index={0}
+            />
+            <p className='text-muted-foreground f-subhead-1 text-balance mt-spacing-4'>
               Impulsamos dos iniciativas que contribuyen a la <b>difusión de la literatura y sus beneficios</b>{' '}
-              entre niños, jóvenes y adultos: <b>Fundación Futuros Autores del Mundo</b> y el
-              {' '}<b>Premio Manuel Salvador Gautier de Novela</b>.
+              entre niños, jóvenes y adultos:{' '}
+              <LinkAuthor
+                url='https://www.keilagonzalezbaez.com/a90dimpulsa'
+                name='Fundación Futuros Autores del Mundo'
+                description='En este proyecto ganamos todos: niños y niñas que consiguen convertirse en autores publicados, sus padres por apoyarles en este sueño, los niños y niñas quienes reciben la donación de los libros, y nosotros por ayudar a esos pequeños autores a cultivar y exhibir su capacidad creativa. Al mismo tiempo, cumplimos con nuestra misión de impulsar la lectoescritura en Hispanoamérica, y en este sentido gana la comunidad.'
+              />{' '}
+              y el <b>Premio Manuel Salvador Gautier de Novela</b>.
             </p>
-          </header>
+          </div>
           <div className='cols-container mt-spacing-7 gap-y-gutter relative z-10'>
             {socialWork.map((socialWorkItem, key) => (
               <div className='w-6-cols xs:w-3-cols md:w-4-cols lg:w-3-cols' key={key}>
@@ -328,6 +329,8 @@ export default function IndexPage () {
           <SectionHeader
             title='Revista Bien-être'
             description='Disfruta gratuitamente de nuestra revista.'
+            index={3}
+            indexEnd={4}
           />
           <div className='mt-spacing-6 cols-container'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
