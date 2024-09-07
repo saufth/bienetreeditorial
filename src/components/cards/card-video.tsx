@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState, useRef, type MouseEvent } from 'react'
-import { motion } from 'framer-motion'
 import { Icons } from '@/components/icons'
 import { isFullScreen, requestFullScreen } from '@/lib/utils'
 
@@ -83,34 +82,6 @@ export default function CardVideo ({ src }: BackgroundVideoProps) {
               </>
               )}
         </div>
-        <motion.div
-          className='absolute inset-0 m-auto bg-black/50 rounded-full -z-10 opacity-40'
-          initial={{
-            scale: 1
-          }}
-          animate={{
-            scale: [1, 1.2, 1.2, 1, 1]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatDelay: 0.3
-          }}
-        />
-        <motion.div
-          className='absolute inset-0 m-auto bg-black/50 rounded-full -z-10 opacity-30'
-          initial={{
-            scale: 1
-          }}
-          animate={{
-            scale: [1, 1.5, 1.5, 1, 1]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatDelay: 0.3
-          }}
-        />
       </button>
     </div>
   )
