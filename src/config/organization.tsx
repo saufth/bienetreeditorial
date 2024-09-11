@@ -59,7 +59,7 @@ export const aboutUs = {
               organizada, eficiente, innovadora y creativa.
             </p>
             <p className='text-muted-foreground f-subhead-2 text-balance'>
-              Un gran porcentaje de nuestros autores han alcanzado el rango de <b>best sellers en Amazon</b> con
+              Un gran porcentaje de nuestros autores han alcanzado el rango de <b>best-sellers en Amazon</b> con
               sus libros; estrategia en la que la editorial <b>Bienetre</b> se especializa.
             </p>
             <p className='text-muted-foreground f-subhead-2 text-balance'>

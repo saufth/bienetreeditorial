@@ -25,7 +25,7 @@ export const services = {
     },
     {
       title: 'Estrategia best-seller de Amazon',
-      description: 'Con este servicio desarrollamos toda la estrategia necesaria para que tu libro esté en la mayor librería del mundo e incremente tus posibilidades de ser best seller. Te apoyamos desde la creación de página la de autor, hasta la subida del libro y la estrategia best seller. ¿Estás listo para que tu libro esté entre los mejores vendidos? Hagámoslo juntos.',
+      description: 'Con este servicio desarrollamos toda la estrategia necesaria para que tu libro esté en la mayor librería del mundo e incremente tus posibilidades de ser best-seller. Te apoyamos desde la creación de página la de autor, hasta la subida del libro y la estrategia best-seller. ¿Estás listo para que tu libro esté entre los mejores vendidos? Hagámoslo juntos.',
       image: {
         src: '/images/services/service-estrategia-best-seller-amazon.webp',
         alt: 'Dos expertos en ventas en linea desarrollando una estrategia de ventas frente a una laptop.',
