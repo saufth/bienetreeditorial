@@ -1,5 +1,5 @@
 import { Author as NextAuthor } from 'next/dist/lib/metadata/types/metadata-types'
-import { whatsappUrl } from '@/lib/utils'
+import { createWhatsappUrl } from '@/lib/utils'
 import type {
   SiteConfig,
   MainNavItem,
@@ -57,9 +57,10 @@ export const contact = [
   {
     country: 'República Dominicana',
     phone: {
-      number: '8092794504',
+      number: '8092764504',
       code: '+1',
-      fullNumber: '+18092794504'
+      fullNumber: '18092764504',
+      whatsapp: createWhatsappUrl('18092764504', '¡Hola! Vengo de la página de Bienetre Editorial, mi nombre es ')
     },
     address: {
       name: 'Santiago, República Dominicana, 51000',
@@ -87,7 +88,7 @@ export const socialNav: NavItem[] = [
   },
   {
     title: 'whatsapp',
-    href: whatsappUrl(contact[0]!.phone.fullNumber)
+    href: contact[0]!.phone.whatsapp
   }
 ]
 

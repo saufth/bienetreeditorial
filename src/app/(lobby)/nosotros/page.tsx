@@ -2,9 +2,8 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import { Hero } from '@/components/sections/hero'
 import { Icons } from '@/components/icons'
-import { aboutUs } from '@/config/organization'
+import { aboutUs, founder } from '@/config/organization'
 import { siteConfig } from '@/config/site'
-import { Highlight } from '@/components/highlight'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -28,10 +27,10 @@ export default function AboutUsPage () {
           <div className='mt-spacing-6'>
             <div className='hidden md:block bg-primary float-right ml-gutter mb-gutter'>
               <Image
-                src='/images/home-services.webp'
-                alt='Las manos de dos personas sosteniendo un libro y apuntando al contenido en un escritorio con un monitor.'
-                width={2750}
-                height={2750}
+                src='/images/about-us-header.webp'
+                alt={`Collage de fotos de ${founder}`}
+                width={1024}
+                height={1024}
                 sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                 loading='lazy'
                 className='md:w-md lg:w-xl xl:w-2xl h-auto'
@@ -41,26 +40,45 @@ export default function AboutUsPage () {
               <aboutUs.content.description />
               <div className='block md:hidden bg-primary'>
                 <Image
-                  src='/images/home-services.webp'
-                  alt='Las manos de dos personas sosteniendo un libro y apuntando al contenido en un escritorio con un monitor.'
-                  width={2750}
-                  height={2750}
+                  src='/images/about-us-header.webp'
+                  alt={`Collage de fotos de ${founder}`}
+                  width={1024}
+                  height={1024}
                   sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                   loading='lazy'
                 />
               </div>
               {aboutUs.content.items.map((aboutUsItem, key) => (
                 <article className='space-y-spacing-4' key={key}>
+                  {key === 1 && (
+                    <div className='hidden md:block bg-primary float-left mr-gutter mb-gutter'>
+                      <Image
+                        src='/images/about-us-body.webp'
+                        alt={`Collage de fotos de ${founder} con clientes que han publicado con ${siteConfig.name}`}
+                        width={1024}
+                        height={1024}
+                        sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                        loading='lazy'
+                        className='md:w-md lg:w-xl xl:w-2xl h-auto'
+                      />
+                    </div>
+                  )}
                   <h3 className='f-heading-2 mt-spacing-3 text-balance font-header f-header'>
-                    {aboutUsItem.title === 'Porqué podemos ayudarte'
-                      ? (
-                        <Highlight index={1}>
-                          {aboutUsItem.title}
-                        </Highlight>
-                        )
-                      : aboutUsItem.title}
+                    {aboutUsItem.title}
                   </h3>
                   <aboutUsItem.description />
+                  {key === 1 && (
+                    <div className='block md:hidden bg-primary'>
+                      <Image
+                        src='/images/about-us-body.webp'
+                        alt={`Collage de fotos de ${founder} con clientes que han publicado con ${siteConfig.name}`}
+                        width={1024}
+                        height={1024}
+                        sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
+                        loading='lazy'
+                      />
+                    </div>
+                  )}
                 </article>
               ))}
             </div>

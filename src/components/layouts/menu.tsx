@@ -1,7 +1,7 @@
 import SocialNav from '@/components/layouts/social-nav'
 import { Link } from '@/components/ui/link'
 import { Icons } from '@/components/icons'
-import { cn, formatPhoneNumber, whatsappUrl } from '@/lib/utils'
+import { cn, formatPhoneNumber } from '@/lib/utils'
 import {
   siteConfig,
   contactEmail,
@@ -19,7 +19,7 @@ export default function Menu ({ action, muted }: MenuProps) {
     <div className='cols-container gap-y-spacing-6'>
       <div className='w-6-cols sm:w-5-cols lg:w-9-cols flex flex-col gap-y-spacing-4 order-2 sm:order-1'>
         <Link
-          href={whatsappUrl(contact[0]!.phone.fullNumber)}
+          href={contact[0]!.phone.whatsapp}
           onClick={action}
           aria-label='Whatsapp de atención al cliente, se abre en una nueva pestaña'
           target='_blank'

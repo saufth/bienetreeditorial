@@ -32,8 +32,8 @@ export function formatPhoneNumber (phoneNumber: string) {
   return match && '(' + match[1] + ') ' + match[2] + '-' + match[3]
 }
 
-export function whatsappUrl (phoneNumber: string) {
-  return `https://wa.me/${phoneNumber}`
+export function createWhatsappUrl (phoneNumber: string, message?: string) {
+  return `https://wa.me/${phoneNumber}${message ? `?text=${message.replaceAll(' ', '+')}` : ''}`
 }
 
 export function calculateYears (dateA: Date, dateB: Date) {

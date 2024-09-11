@@ -62,6 +62,19 @@ export const aboutUs = {
               Un gran porcentaje de nuestros autores han alcanzado el rango de <b>best sellers en Amazon</b> con
               sus libros; estrategia en la que la editorial <b>Bienetre</b> se especializa.
             </p>
+            <p className='text-muted-foreground f-subhead-2 text-balance'>
+              Asimismo, en 2019 <b>Bienetre</b> inicia su proyecto social llamado en principio{' '}
+              <b>A90D Impulsa</b> y más adelante convirtiéndose en la fundación sin fines de lucro{' '}
+              <LinkAuthor
+                url='https://www.keilagonzalezbaez.com/a90dimpulsa'
+                name='Futuros Autores del Mundo'
+                description='En este proyecto ganamos todos: niños y niñas que consiguen convertirse en autores publicados, sus padres por apoyarles en este sueño, los niños y niñas quienes reciben la donación de los libros, y nosotros por ayudar a esos pequeños autores a cultivar y exhibir su capacidad creativa. Al mismo tiempo, cumplimos con nuestra misión de impulsar la lectoescritura en Hispanoamérica, y en este sentido gana la comunidad.'
+              />.
+              El objetivo de esta organización es abrir las puertas a niños y niñas sin distinción para
+              que puedan convertirse en los <b>escritores y pensadores de mañana</b>; al mismo tiempo que
+              les ayudamos a desarrollar su sentido crítico, reflexivo y compasivo, mientras colaboramos
+              con elevar índices de lectoescritura en República Dominicana y demás países de habla hispana.
+            </p>
           </>
         )
       },
@@ -158,13 +171,13 @@ export const testimonials: CardStackItem[] = [
 
 export const trustedBy: NavItemExternal[] = [
   {
-    name: 'Clinica Union Medica',
-    url: 'https://clinicaunionmedica.com',
+    name: 'TED',
+    url: 'https://www.ted.com',
     image: {
-      src: '/images/clients/clinicaunionmedica.webp',
-      alt: 'Logo de la Clínica Unión Médica',
-      width: 340,
-      height: 234
+      src: '/images/clients/ted.webp',
+      alt: 'Logo de TED',
+      width: 640,
+      height: 230
     }
   },
   {
@@ -178,6 +191,16 @@ export const trustedBy: NavItemExternal[] = [
     }
   },
   {
+    name: 'REUTERS',
+    url: 'https://www.reuters.com',
+    image: {
+      src: '/images/clients/reuters.webp',
+      alt: 'Logo de REUTERS',
+      width: 626,
+      height: 150
+    }
+  },
+  {
     name: 'Paloma De La Cruz',
     url: 'https://www.palomadelacruz.com.do',
     image: {
@@ -188,23 +211,23 @@ export const trustedBy: NavItemExternal[] = [
     }
   },
   {
-    name: 'TED',
-    url: 'https://www.ted.com',
+    name: 'Clinica Union Medica',
+    url: 'https://clinicaunionmedica.com',
     image: {
-      src: '/images/clients/ted.webp',
-      alt: 'Logo de TED',
-      width: 640,
-      height: 230
+      src: '/images/clients/clinicaunionmedica.webp',
+      alt: 'Logo de la Clínica Unión Médica',
+      width: 340,
+      height: 234
     }
   },
   {
-    name: 'REUTERS',
-    url: 'https://www.reuters.com',
+    name: 'Banreservas',
+    url: 'https://www.banreservas.com',
     image: {
-      src: '/images/clients/reuters.webp',
-      alt: 'Logo de REUTERS',
-      width: 626,
-      height: 150
+      src: '/images/clients/banreservas.webp',
+      alt: 'Logo de Banreservas',
+      width: 200,
+      height: 45.898
     }
   }
 ]
@@ -254,14 +277,14 @@ export const faq = {
 
 export const socialWork = [
   {
-    title: 'Futuros Autores del Mundo presenta libro multicultural',
+    title: 'Fundación Futuros Autores del Mundo presenta libro multicultural',
     description: 'La fundación dominicana Futuros Autores del Mundo fue la responsable de la producción de la tan esperada quinta edición de Caleidoscopio, una colección de cuentos escritos por niños para niños.',
     url: 'https://elnuevodiario.com.do/editorial-bienetre-pone-a-circular-poemario-maya-espanol-escrito-por-ninos-y-ninas/',
     image: {
       src: '/images/social-work/social-work-00.webp',
       alt: 'Keila González Báez junto a los niños autores de esta 5ta edición del libro Caleidoscopio.',
-      width: 512,
-      height: 512
+      width: 742,
+      height: 742
     }
   },
   {
@@ -271,8 +294,8 @@ export const socialWork = [
     image: {
       src: '/images/social-work/social-work-01.webp',
       alt: 'Realizarán primera entrega del Premio Manuel Salvador Gautier de Novela 2022',
-      width: 512,
-      height: 512
+      width: 742,
+      height: 742
     }
   },
   {
@@ -282,8 +305,8 @@ export const socialWork = [
     image: {
       src: '/images/social-work/social-work-02.webp',
       alt: 'Los jóvenes autores compartieron sus experiencias durante la FIL Guadalajara 2023',
-      width: 512,
-      height: 512
+      width: 742,
+      height: 742
     }
   },
   {
@@ -293,8 +316,8 @@ export const socialWork = [
     image: {
       src: '/images/social-work/social-work-03.webp',
       alt: 'Víctor Xavier Ureña gana el Premio Manuel Salvador Gautier de Novela 2023 con Un futuro prometedor',
-      width: 512,
-      height: 512
+      width: 742,
+      height: 742
     }
   }
 ]

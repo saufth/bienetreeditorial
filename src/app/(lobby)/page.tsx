@@ -57,7 +57,6 @@ export default function IndexPage () {
             title={aboutUs.label}
             description={aboutUs.description}
             index={6}
-            indexEnd={8}
           />
           <div className='mt-spacing-6 cols-container'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols mt-spacing-6 md:mt-0 order-2 md:order-1'>
@@ -78,9 +77,9 @@ export default function IndexPage () {
             <div className='w-6-cols sm:w-8-cols md:w-5-cols lg:w-6-cols bg-secondary order-1 md:order-2'>
               <Image
                 src='/images/home-about-us.webp'
-                alt='La mano de una persona marcando con un lapiz rojo palabras clave en un libro en un escritorio frente a una computadora.'
-                width={2750}
-                height={2750}
+                alt={`${founder.name} junto a la Dra. Ana María Polo González posando para una foto mientras sostiene una revista de ${siteConfig.name}`}
+                width={1920}
+                height={1920}
                 sizes='(max-width: 744px) 100vw, (max-width: 1280px) 100vw, (max-width: 1440px) 100vw, 100vw'
                 loading='lazy'
                 className='w-full'
@@ -93,9 +92,8 @@ export default function IndexPage () {
         <div className='container'>
           <SectionHeader
             title='Publicaciones recientes'
-            description='Conoce algunos de nuestros best sellers.'
+            description='Conoce algunos de nuestros best-sellers.'
             index={4}
-            indexEnd={5}
           />
           <div className='cols-container mt-spacing-6'>
             {products.map((product, key) => (
@@ -132,14 +130,13 @@ export default function IndexPage () {
       </section>
       <section>
         <div className='container'>
-          <div className='cols-container mt-spacing-9'>
+          <div className='cols-container md:flex-row-reverse mt-spacing-9'>
             <div className='w-6-cols sm:w-8-cols md:w-3-cols lg:w-6-cols'>
-              <div className='sm:max-w-lg sm:pt-spacing-6 lg:pt-spacing-7'>
+              <div className='sm:max-w-lg sm:pt-spacing-7 lg:pl-spacing-4 xl:pl-spacing-5'>
                 <SectionHeader
                   title={services.label}
                   description={`${services.title}.`}
                   index={2}
-                  indexEnd={3}
                 />
                 <Button
                   asChild
@@ -172,7 +169,7 @@ export default function IndexPage () {
       <section id='nuestras-alianzas' className='pt-spacing-9'>
         <div className='container'>
           <SectionHeader
-            title='Nuestras alianzas'
+            title='Colaboraciones estratégicas'
             description='Ellos confiaron en nosotros.'
           />
           <div className='cols-container items-center justify-center gap-y-gutter mt-spacing-6'>
@@ -238,7 +235,7 @@ export default function IndexPage () {
           </div>
           <div className='cols-container mt-gutter gap-y-gutter relative z-10'>
             {(new Array(6).fill(true)).map((_item, key) => (
-              <div className='w-2-cols md:w-2-cols lg:w-3-cols' key={key}>
+              <div className='w-2-cols md:w-1/3-cols lg:w-4-cols' key={key}>
                 <CardVideo src={`/video/testimonials-${key}.mp4`} />
               </div>
             ))}
@@ -251,7 +248,6 @@ export default function IndexPage () {
             <SectionHeader
               title='Trabajo social'
               description='Ayudar nos mueve.'
-              index={0}
             />
             <p className='text-muted-foreground f-subhead-1 text-balance mt-spacing-4'>
               Impulsamos dos iniciativas que contribuyen a la <b>difusión de la literatura y sus beneficios</b>{' '}
@@ -266,7 +262,7 @@ export default function IndexPage () {
           </div>
           <div className='cols-container mt-spacing-7 gap-y-gutter relative z-10'>
             {socialWork.map((socialWorkItem, key) => (
-              <div className='w-6-cols xs:w-3-cols md:w-4-cols lg:w-3-cols' key={key}>
+              <div className='w-6-cols sm:w-3-cols md:w-4-cols lg:w-6-cols' key={key}>
                 <NextLink
                   href={socialWorkItem.url}
                   target='_blank'
